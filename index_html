@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitácora Marina | Pasaporte Salvaje</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bitácora Marina: Pasaporte Salvaje</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#planificacion">Planificación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Sobre mí</h2>
+        <p>Viajero de naturaleza explorando el mundo...</p>
+    </section>
+
+    <footer>
+        <p>"Lo que no te mata te hace más fuerte"</p>
+    </footer>
+</body>
+</html>
+
