@@ -1,6 +1,7 @@
 # - Proyecto Web: Bitácora Marina, Pasaporte Salvaje - 
 
 ## 1. Estructura del menu
+hola
 * Inicio (Foto grande de portada + Quien soy)
 * Destinos (Lista de paises visitados)
 * Galeria (Mis mejores fotos de naturaleza)
