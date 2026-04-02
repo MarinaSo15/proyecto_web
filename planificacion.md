@@ -2,7 +2,7 @@
 
 ## 1. Estructura del menu
 hola
-* Inicio (Foto grande de portada + Quien soy)
+* Inicio (Fotos grande de portada + quien soy). Fotos que pasen. Quizás mapa mundi q lleve a los destinos
 * Destinos (Lista de paises visitados)
 * Galeria (Mis mejores fotos de naturaleza)
 * Planificacion (Tablas de presupuesto y listas de equipaje)
