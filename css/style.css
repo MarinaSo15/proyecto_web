@@ -1,37 +1,31 @@
-body {
-    font-family: Arial, sans-serif;
+/* 1. CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén) */
+* {
     margin: 0;
-    color: #333;
-}
-
-header {
-    background-color: #2E8B57; /* Verde Selva */
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
     padding: 0;
+    box-sizing: border-box; /* Regla de oro: para que el padding no ensanche las cajas */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+body {
+    background-color: #f4f4f4; /* Un gris muy clarito para que resalte el contenido */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Letra profesional y legible */
+    color: #333;
+    line-height: 1.6;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+/* 2. EL CONTENEDOR (Para que la web no ocupe todo el ancho del monitor) */
+section {
+    background-color: white;
+    margin: 20px auto;   /* Centra la sección y le da aire por arriba/abajo */
+    padding: 2rem;       /* Aire por dentro para que el texto no toque los bordes */
+    max-width: 800px;    /* Ancho máximo: como un folio A4, lo más cómodo para leer */
+    border-radius: 8px;  /* Esquinas suavizadas */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
 }
 
-footer {
-    background-color: #8B4513; /* Marrón Tierra */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* 3. LOS TÍTULOS DE LAS SECCIONES (Asia, África...) */
+h2 {
+    color: #2E8B57;      /* Tu verde selva */
+    border-bottom: 2px solid #8B4513; /* Subrayado marrón tierra */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
