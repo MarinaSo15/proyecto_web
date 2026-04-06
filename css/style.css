@@ -6,10 +6,51 @@
 }
 
 body {
-    background-color: #f4f4f4; /* Un gris muy clarito para que resalte el contenido */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Letra profesional y legible */
-    color: #333;
-    line-height: 1.6;
+    background-color: #f4f4f4; /* El suelo del almacén */
+    font-family: Arial, sans-serif; /* La letra base */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2E8B57; /* Verde Selva */
+    color: white;              /* Letras blancas */
+    padding: 40px 20px;       /* Le damos "aire" por arriba y abajo */
+    text-align: center;        /* Centramos el contenido */
+}
+
+/* Estilizamos el texto del título principal */
+h1 {
+    font-size: 2.5rem;         /* Letra grande de titular */
+    text-transform: uppercase; /* Todo en MAYÚSCULAS */
+    letter-spacing: 2px;       /* Espacio entre letras para que respire */
+    margin-bottom: 20px;       /* Separación con el menú de abajo */
+}
+
+/* Ponemos los enlaces del menú en fila */
+nav ul {
+    list-style: none;          /* Quitamos los puntos de la lista */
+    display: flex;             /* ¡MAGIA! Pone los elementos en fila */
+    justify-content: center;   /* Los centra en el medio */
+    padding: 0;
+}
+
+/* Espacio entre cada palabra del menú */
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Estilo de los enlaces */
+nav a {
+    color: #e0f2f1;            /* Un blanco suave/verdoso */
+    text-decoration: none;     /* Sin el subrayado azul feo */
+    font-weight: bold;         /* Letra gruesa */
+}
+
+/* Efecto al pasar el ratón */
+nav a:hover {
+    color: #ffffff;            /* Se ilumina al tocarlo */
+    text-decoration: underline;
 }
 
 /* 2. EL CONTENEDOR (Para que la web no ocupe todo el ancho del monitor) */
