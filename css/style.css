@@ -9,8 +9,14 @@ PUNTO 1: CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén)
 }
 
 body {
-    background-color: #f4f4f4; /* Fondo de pantalla */
-    font-family: Arial, sans-serif; /* Letra base */
+    /* He añadido la comilla ' que faltaba después de .webp */
+    background-image: url('mapa_bueno.webp'); 
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -59,15 +65,18 @@ nav a:hover {
 /* -----------------------------------------------------------
    PUNTO 2: LAS SECCIONES (diarios de viaje)
    ----------------------------------------------------------- */
-
 section {
-    background-color: white; /* Cada viaje en un bloque limpio */
-    margin: 40px auto;       /* Separa los bloques y los centra */
-    padding: 30px;           /* Aire interior para que el texto respire */
-    max-width: 850px;        /* Ancho máximo: como una hoja de revista */
-    border-radius: 10px;     /* Esquinas suaves, no picudas */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Una sombra para que parezca que "flota" */
+    /* Blanco con un toque de transparencia */
+    background-color: rgba(255, 255, 255, 0.9); 
+    
+    background-image: none; /* Esto borra cualquier imagen de fondo previa */
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 850px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
 
 /* El título de cada continente (Asia, África...) */
 h2 {
