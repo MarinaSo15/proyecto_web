@@ -91,7 +91,8 @@ ul {
 section li {
     background-color: #fcfcfc;      /* Un blanco-gris muy clarito */
     margin-bottom: 12px;            /* Espacio entre cada destino */
-    padding: 15px;                  /* Aire dentro de la cajita del destino */
+    /* El primer número es arriba/abajo, el segundo es derecha/izquierda */
+    padding: 15px 25px;                  /* Aire dentro de la cajita del destino, he subido a 25px el espacio lateral */
     border-left: 6px solid #2E8B57; /* La barrita verde de "marca" */
     border-radius: 5px;             /* Esquinas suaves */
     transition: 0.3s ease;          /* Para que el movimiento sea fluido */
@@ -140,4 +141,91 @@ footer {
     padding: 20px;
     margin-top: 50px;       /* Separación del último bloque de viaje */
     font-size: 0.9rem;
+}
+
+/* -----------------------------------------------------------
+   EFECTO ÁLBUM DE FOTOS (Celo en las esquinas)
+   ----------------------------------------------------------- */
+
+/* 1. Preparamos el contenedor de la foto */
+section p img {
+    position: relative; /* Necesario para que el celo sepa dónde pegarse */
+    display: block;
+    margin: 30px auto; /* Aire arriba y abajo */
+    /* Quitamos la sombra que pusimos antes, el celo ya decora suficiente */
+    box-shadow: none; 
+}
+
+/* 2. Creamos el trozo de celo (Pseudoelemento) */
+section p img::after {
+    content: ""; /* Obligatorio, aunque esté vacío */
+    position: absolute;
+    
+    /* Ubicación: Esquina superior derecha */
+    top: -15px;
+    right: -15px;
+    
+    /* Tamaño del trozo de celo */
+    width: 100px;
+    height: 30px;
+    
+    /* Color y textura: Un amarillo pálido y semitransparente (celo viejo) */
+    background-color: rgba(255, 255, 200, 0.5);
+    
+    /* Lo giramos un poco para que parezca pegado a mano */
+    transform: rotate(45deg);
+    
+    /* Un borde sutil y sombra para dar relieve */
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    
+    /* Un efecto de "textura" para que no sea un color plano */
+    background-image: linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 3px 100%;
+    
+    z-index: 1; /* Asegura que el celo esté POR ENCIMA de la foto */
+}
+
+/* -----------------------------------------------------------
+   EFECTO ÁLBUM DE RECORTES (Fotos con marco y giro)
+   ----------------------------------------------------------- */
+
+/* Estilo para la imagen */
+section img {
+    background-color: white;    /* El marco blanco de la foto */
+    padding: 10px 10px 30px 10px; /* Marco más ancho abajo (estilo Polaroid) */
+    border: 1px solid #ddd;     /* Un borde muy fino para dar realismo */
+    display: block;
+    margin: 20px auto;          /* Centrada en su hueco */
+    max-width: 90%;             /* Que no toque los bordes de la ficha */
+    
+    /* La sombra para que parezca que "se despega" del papel */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    
+    /* El giro: -2 grados para que parezca puesta a mano */
+    transform: rotate(-2deg);
+    transition: 0.5s;           /* Para que al tocarla haga algo */
+}
+
+/* Efecto: Cuando pasas el ratón, la foto se endereza */
+section img:hover {
+    transform: rotate(0deg) scale(1.05); /* Se pone recta y crece un pelín */
+    cursor: zoom-in;
+}
+
+/* EFECTO ÁLBUM DE RECORTES (Este es el bueno) */
+section img {
+    background-color: white;    
+    padding: 10px 10px 30px 10px; 
+    border: 1px solid #ddd;     
+    display: block;
+    margin: 20px auto;          
+    max-width: 90%;             
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transform: rotate(-2deg); /* El giro maestro */
+    transition: 0.5s;           
+}
+
+section img:hover {
+    transform: rotate(0deg) scale(1.05); /* Se endereza al tocarla */
 }
