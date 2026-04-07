@@ -1,4 +1,7 @@
-/* 1. CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén) */
+/* ----------------------------------------------------------
+PUNTO 1: CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén) 
+----------------------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -54,7 +57,7 @@ nav a:hover {
 }
 
 /* -----------------------------------------------------------
-   PUNTO 2: LAS SECCIONES (Tus diarios de viaje)
+   PUNTO 2: LAS SECCIONES (diarios de viaje)
    ----------------------------------------------------------- */
 
 section {
@@ -109,4 +112,32 @@ p {
     margin-bottom: 20px;
     color: #555;
     text-align: justify; /* Texto alineado como en un libro */
+}
+
+/* -----------------------------------------------------------
+   PUNTO 4: MULTIMEDIA (Fotos y Vídeos)
+   ----------------------------------------------------------- */
+
+/* Para que nada se desborde */
+img, video {
+    max-width: 100%;    /* Nunca será más ancho que la ficha blanca */
+    height: auto;       /* Mantiene proporción (no se estira) */
+    display: block;     /* Bloque sólido */
+    margin: 20px auto;  /* Centrado y con aire arriba/abajo */
+    border-radius: 8px; /* Esquinas suavizadas como el resto de la web */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para que resalte del fondo */
+}
+
+/* Extra para  vídeos */
+video {
+    border: 2px solid #2E8B57; /* Un marco verde para los vídeos */
+}
+
+footer {
+    background-color: #333; /* Gris muy oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;       /* Separación del último bloque de viaje */
+    font-size: 0.9rem;
 }
