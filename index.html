@@ -16,8 +16,8 @@
     <div id="portada-impacto">
         <div class="frase-bienvenida">
             <h1>Bitácora Marina</h1>
-            <p>Logística y Conservación en Estado Puro</p>
-            <button class="boton-entrar" onclick="entrarALaBitacora()">Explorar Expediciones</button>
+            <p>Lugares, conservación y logística</p>
+            <button class="boton-entrar" onclick="entrarALaBitacora()">Explorar</button>
         </div>
     </div>
 
@@ -70,6 +70,8 @@
                                     <img src="img/asia/myanmar/bagan2.jpg" alt="Bagan" onclick="abrirImagen(this)">
                                     <img src="img/asia/myanmar/bagan3.jpg" alt="Bagan" onclick="abrirImagen(this)">
                                     <img src="img/asia/myanmar/bagan5.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                                    <img src="img/asia/myanmar/bagan11.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                                    <img src="img/asia/myanmar/bagan12.jpg" alt="Bagan" onclick="abrirImagen(this)">
                                 </div>
                             </li>
                             <li>Inle</li>
@@ -80,6 +82,69 @@
                     </li>
                     </ol>
             </section>
+
+<section id="africa">
+    <h2>ÁFRICA 🌍</h2>
+    <ol>
+        <li><strong>RD CONGO:</strong>
+            <ul>
+                <li>Parque Nacional de Kahuzi Biega y Virunga</li>              
+                    <div class="galeria-mini">
+                        <img src="img/africa/congo/gorila.jpg" alt="Gorila de montaña" onclick="abrirImagen(this)">
+                        <img src="img/africa/congo/virunga.jpg" alt="Volcán Virunga" onclick="abrirImagen(this)">
+                    </div>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+<section id="planificacion">
+    <h2>Guía de Expedición y Logística</h2>
+    <p>La clave de un viaje seguro es la preparación de la cadena de suministro y salud.</p>
+    <table border="1" style="width: 100%; border-collapse: collapse; background: white;">
+        <thead>
+            <tr style="background-color: #2E8B57; color: white;">
+                <th>Categoría</th>
+                <th>Concepto</th>
+                <th>Prioridad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Salud</td>
+                <td>Seguro médico y Vacunas</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>Documentación</td>
+                <td>Visados y Pasaporte</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>Logística</td>
+                <td>Transporte local y Guías</td>
+                <td>Media</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas sobre logística en parques nacionales? Escríbeme.</p>
+    <form action="#">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 8px; margin: 10px 0;"><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin: 10px 0;"><br>
+        
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" style="width: 100%; padding: 8px; margin: 10px 0;" rows="4"></textarea><br>
+        
+        <button type="submit" class="boton-entrar" style="font-size: 1rem; padding: 10px 20px;">Enviar Mensaje</button>
+    </form>
+</section>
 
             </main>
 

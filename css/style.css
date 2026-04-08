@@ -1,264 +1,242 @@
 /* ----------------------------------------------------------
-PUNTO 1: CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén) 
------------------------------------------------------------ */
+   PUNTO 1: CONFIGURACIÓN GLOBAL 
+   ----------------------------------------------------------- */
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Regla de oro: para que el padding no ensanche las cajas */
+    box-sizing: border-box;
 }
 
 body {
-    /* He añadido la comilla ' que faltaba después de .webp */
-    background-image: url('mapa.webp'); 
-    
+    background-image: url('mrauk_u.jpg'); 
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
+
+/* -----------------------------------------------------------
+   PUNTO 2: PORTADA DE IMPACTO (Lo primero que se ve)
+   ----------------------------------------------------------- */
+
+#portada-impacto {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 50px;  /* Separa el texto del borde de la pantalla */
+    text-align: right;
+    /* Degradado oscuro para que el texto blanco resalte sobre la foto */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)); 
+}
+
+.frase-bienvenida h1 {
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+    margin-bottom: 10px;
+}
+
+.frase-bienvenida p {
+    color: white !important;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    margin-bottom: 30px;
+}
+
+.boton-entrar {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #2E8B57; /* Verde Selva */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+}
+
+.boton-entrar:hover {
+    background-color: #3cb371;
+    transform: scale(1.1);
+}
+
+/* -----------------------------------------------------------
+   PUNTO 3: CABECERA Y NAVEGACIÓN (Contenido principal)
+   ----------------------------------------------------------- */
 
 header {
-    background-color: #2E8B57; /* Verde Selva */
-    color: white;              /* Letras blancas */
-    padding: 40px 20px;       /* Aire por arriba y abajo */
-    text-align: center;        /* Centrar contenido */
+    background-color: #2E8B57;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* Estilizamos el texto del título principal */
-h1 {
-    font-size: 2.5rem;         /* Letra grande de titular */
-    text-transform: uppercase; /* Todo en MAYÚSCULAS */
-    letter-spacing: 2px;       /* Espacio entre letras para que respire */
-    margin-bottom: 20px;       /* Separación con el menú de abajo */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-/* Ponemos los enlaces del menú en fila */
 nav ul {
-    list-style: none;          /* Quitamos los puntos de la lista */
-    display: flex;             /* Los elementos en fila */
-    justify-content: center;   /* Los centra en el medio */
+    list-style: none;
+    display: flex;
+    justify-content: center;
     padding: 0;
 }
 
-/* Espacio entre cada palabra del menú */
 nav ul li {
     margin: 0 15px;
 }
 
-/* Estilo de los enlaces */
 nav a {
-    color: #e0f2f1;            /* Un blanco suave/verdoso */
-    text-decoration: none;     /* Sin el subrayado azul */
-    font-weight: bold;         /* Letra gruesa */
+    color: #e0f2f1;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Efecto al pasar el ratón */
 nav a:hover {
-    color: #ffffff;            /* Se ilumina al tocarlo */
+    color: #ffffff;
     text-decoration: underline;
 }
 
 /* -----------------------------------------------------------
-   PUNTO 2: LAS SECCIONES (diarios de viaje)
+   PUNTO 4: SECCIONES Y LISTAS
    ----------------------------------------------------------- */
+
 section {
-    /* Blanco con un toque de transparencia */
-    background-color: rgba(255, 255, 255, 0.5); 
-    
-    background-image: none; /* Esto borra cualquier imagen de fondo previa */
+    background-color: rgba(255, 255, 255, 0.85); /* Un poco más opaco para leer mejor */
     margin: 40px auto;
     padding: 30px;
-    max-width: 850px;
+    max-width: 900px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-
-/* El título de cada continente (Asia, África...) */
 h2 {
-    color: #2E8B57;          /* Verde selva para los títulos */
-    border-bottom: 2px solid #8B4513; /* Subrayado marrón tierra */
+    color: #2E8B57;
+    border-bottom: 2px solid #8B4513;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* -----------------------------------------------------------
-   PUNTO 3: EL INVENTARIO (Listas y destinos interactivos)
-   ----------------------------------------------------------- */
-
-/* Estilizamos las listas de países y parques */
-ul {
-    list-style-type: none; /* Quitamos los puntos negros */
-    padding: 0;
-}
-
-/* Pongo section li para q no afecte al menú de arriba principal */
 section li {
-    background-color: #fcfcfc;      /* Un blanco-gris muy clarito */
-    margin-bottom: 12px;            /* Espacio entre cada destino */
-    /* El primer número es arriba/abajo, el segundo es derecha/izquierda */
-    padding: 15px 25px;                  /* Aire dentro de la cajita del destino, he subido a 25px el espacio lateral */
-    border-left: 6px solid #2E8B57; /* La barrita verde de "marca" */
-    border-radius: 5px;             /* Esquinas suaves */
-    transition: 0.3s ease;          /* Para que el movimiento sea fluido */
+    background-color: #fcfcfc;
+    margin-bottom: 12px;
+    padding: 15px 25px;
+    border-left: 6px solid #2E8B57;
+    border-radius: 5px;
+    transition: 0.3s ease;
     color: #444;
 }
 
-/* También añadimos "section" aquí para el efecto del ratón */
 section li:hover {
-    background-color: #e8f5e9;    /* Se ilumina en verde clarito */
-    transform: translateX(15px);  /* Se desliza 15px a la derecha */
+    background-color: #e8f5e9;
+    transform: translateX(15px);
     cursor: pointer;
 }
 
-/* Estilo para los párrafos de texto (Sobre mí, descripciones...) */
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #555;
-    text-align: justify; /* Texto alineado como en un libro */
-}
-
 /* -----------------------------------------------------------
-   PUNTO 4: MULTIMEDIA (Fotos y Vídeos)
+   PUNTO 5: GALERÍA Y EFECTO AMPLIAR (Myanmar/Bagan)
    ----------------------------------------------------------- */
 
-/* Para que nada se desborde */
-img, video {
-    max-width: 100%;    /* Nunca será más ancho que la ficha blanca */
-    height: auto;       /* Mantiene proporción (no se estira) */
-    display: block;     /* Bloque sólido */
-    margin: 20px auto;  /* Centrado y con aire arriba/abajo */
-    border-radius: 8px; /* Esquinas suavizadas como el resto de la web */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para que resalte del fondo */
-}
-
-/* Extra para  vídeos */
-video {
-    border: 2px solid #2E8B57; /* Un marco verde para los vídeos */
-}
-
-footer {
-    background-color: #333; /* Gris muy oscuro */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;       /* Separación del último bloque de viaje */
-    font-size: 0.9rem;
-}
-
-/* -----------------------------------------------------------
-   EFECTO ÁLBUM DE FOTOS (Celo en las esquinas)
-   ----------------------------------------------------------- */
-
-/* 1. Preparamos el contenedor de la foto */
-section p img {
-    position: relative; /* Necesario para que el celo sepa dónde pegarse */
-    display: block;
-    margin: 30px auto; /* Aire arriba y abajo */
-    /* Quitamos la sombra que pusimos antes, el celo ya decora suficiente */
-    box-shadow: none; 
-}
-
-/* 2. Creamos el trozo de celo (Pseudoelemento) */
-section p img::after {
-    content: ""; /* Obligatorio, aunque esté vacío */
-    position: absolute;
-    
-    /* Ubicación: Esquina superior derecha */
-    top: -15px;
-    right: -15px;
-    
-    /* Tamaño del trozo de celo */
-    width: 100px;
-    height: 30px;
-    
-    /* Color y textura: Un amarillo pálido y semitransparente (celo viejo) */
-    background-color: rgba(255, 255, 200, 0.5);
-    
-    /* Lo giramos un poco para que parezca pegado a mano */
-    transform: rotate(45deg);
-    
-    /* Un borde sutil y sombra para dar relieve */
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    
-    /* Un efecto de "textura" para que no sea un color plano */
-    background-image: linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px);
-    background-size: 3px 100%;
-    
-    z-index: 1; /* Asegura que el celo esté POR ENCIMA de la foto */
-}
-
-/* -----------------------------------------------------------
-   EFECTO ÁLBUM DE RECORTES (Fotos con marco y giro)
-   ----------------------------------------------------------- */
-
-/* Estilo para la imagen */
-section img {
-    background-color: white;    /* El marco blanco de la foto */
-    padding: 10px 10px 30px 10px; /* Marco más ancho abajo (estilo Polaroid) */
-    border: 1px solid #ddd;     /* Un borde muy fino para dar realismo */
-    display: block;
-    margin: 20px auto;          /* Centrada en su hueco */
-    max-width: 90%;             /* Que no toque los bordes de la ficha */
-    
-    /* La sombra para que parezca que "se despega" del papel */
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    
-    /* El giro: -2 grados para que parezca puesta a mano */
-    transform: rotate(-2deg);
-    transition: 0.5s;           /* Para que al tocarla haga algo */
-}
-
-/* Efecto: Cuando pasas el ratón, la foto se endereza */
-section img:hover {
-    transform: rotate(0deg) scale(1.05); /* Se pone recta y crece un pelín */
-    cursor: zoom-in;
-}
-
-/* EFECTO ÁLBUM DE RECORTES (Este es el bueno) */
-section img {
-    background-color: white;    
-    padding: 10px 10px 30px 10px; 
-    border: 1px solid #ddd;     
-    display: block;
-    margin: 20px auto;          
-    max-width: 90%;             
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    transform: rotate(-2deg); /* El giro maestro */
-    transition: 0.5s;           
-}
-
-section img:hover {
-    transform: rotate(0deg) scale(1.05); /* Se endereza al tocarla */
-}
-
-/* -----------------------------------------------------------
-   Ajuste para las fotos en fila (Myanmar/Bagan)
-   ----------------------------------------------------------- */
 .galeria-mini {
-    display: flex;       /* Las pone en fila */
-    flex-wrap: wrap;     /* Si no caben, bajan a la siguiente fila */
-    gap: 10px;           /* Espacio entre ellas */
-    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .galeria-mini img {
-    width: 150px !important; /* Forzamos tamaño pequeño */
-    height: 100px !important;
-    transform: rotate(0deg) !important; /* En la galería mejor que estén rectas */
-    margin: 0 !important;   /* Quitamos los márgenes automáticos */
+    /* Mantenemos el tamaño que elegiste */
+    width: 250px !important;  
+    height: 180px !important;
+
+    /* 👇 ESTA ES LA LÍNEA MÁGICA 👇 */
+    object-fit: cover;       /* Importante: para que no se deformen */
+    /* 👆 ESTA ES LA LÍNEA MÁGICA 👆 */
+
+    /* Resto de tu código (marcos, sombras, etc.) */
+    border: 3px solid white; 
+    transform: rotate(0deg) !important;
+    margin: 5px !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .galeria-mini img:hover {
-    transform: scale(1.2) !important; /* Crece un 20% al pasar el ratón */
-    z-index: 10;                     /* Se pone por encima de las demás al crecer */
+    transform: scale(1.1) !important;
+    z-index: 10;
+}
+
+/* Estilo para las fotos SUELTAS (Efecto Polaroid) */
+section img {
+    background-color: white;
+    padding: 10px 10px 30px 10px;
+    border: 1px solid #ddd;
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transform: rotate(-2deg);
+    transition: 0.5s;
+}
+
+/* -----------------------------------------------------------
+   PUNTO 6: LIGHTBOX (Caja para ampliar fotos)
+   ----------------------------------------------------------- */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.contenido-lightbox {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    margin-top: 3%;
+    border: 5px solid white;
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0.5)} 
+    to {transform:scale(1)}
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;                /* Movimiento suave */
+}
+
+/* -----------------------------------------------------------
+   PUNTO 7: PIE DE PÁGINA
+   ----------------------------------------------------------- */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
 }
