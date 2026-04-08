@@ -55,7 +55,7 @@
                 <li>Hsipaw</li>
                 <li>Bagan</li>
                    <div class="galeria-mini">
-                       <img src="img/asia/myanmar/bagan.jpg" alt="Templos de Bagan">
+                       <img src="img/asia/myanmar/bagan.jpg" alt="Templos de Bagan" onclick="abrirImagen(this)">
                        <img src="img/asia/myanmar/bagan1.jpg" alt="Bagan">
                        <img src="img/asia/myanmar/bagan2.jpg" alt="Bagan">
                        <img src="img/asia/myanmar/bagan3.jpg" alt="Bagan">
@@ -203,5 +203,11 @@
     <footer>
         <p>"Lo que no te mata, engorda."</p>
     </footer>
+
+    <div id="miLightbox" class="lightbox" onclick="cerrarImagen()">
+    <span class="cerrar">&times;</span>
+    <img class="contenido-lightbox" id="imagenGrande">
+    </div> 
+
 </body>
 </html>

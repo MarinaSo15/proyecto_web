@@ -10,7 +10,7 @@ PUNTO 1: CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén)
 
 body {
     /* He añadido la comilla ' que faltaba después de .webp */
-    background-image: url('mrauk_u.jpg'); 
+    background-image: url('mapa.webp'); 
     
     background-attachment: fixed;
     background-position: center;
@@ -237,4 +237,28 @@ section img {
 
 section img:hover {
     transform: rotate(0deg) scale(1.05); /* Se endereza al tocarla */
+}
+
+/* -----------------------------------------------------------
+   Ajuste para las fotos en fila (Myanmar/Bagan)
+   ----------------------------------------------------------- */
+.galeria-mini {
+    display: flex;       /* Las pone en fila */
+    flex-wrap: wrap;     /* Si no caben, bajan a la siguiente fila */
+    gap: 10px;           /* Espacio entre ellas */
+    margin-top: 15px;
+}
+
+.galeria-mini img {
+    width: 150px !important; /* Forzamos tamaño pequeño */
+    height: 100px !important;
+    transform: rotate(0deg) !important; /* En la galería mejor que estén rectas */
+    margin: 0 !important;   /* Quitamos los márgenes automáticos */
+}
+
+.galeria-mini img:hover {
+    transform: scale(1.2) !important; /* Crece un 20% al pasar el ratón */
+    z-index: 10;                     /* Se pone por encima de las demás al crecer */
+    cursor: pointer;
+    transition: 0.3s;                /* Movimiento suave */
 }
