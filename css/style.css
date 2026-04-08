@@ -10,7 +10,7 @@ PUNTO 1: CONFIGURACIÓN GLOBAL (El suelo y las paredes del almacén)
 
 body {
     /* He añadido la comilla ' que faltaba después de .webp */
-    background-image: url('mapa_bueno.webp'); 
+    background-image: url('mrauk_u.jpg'); 
     
     background-attachment: fixed;
     background-position: center;
@@ -67,7 +67,7 @@ nav a:hover {
    ----------------------------------------------------------- */
 section {
     /* Blanco con un toque de transparencia */
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.5); 
     
     background-image: none; /* Esto borra cualquier imagen de fondo previa */
     margin: 40px auto;
