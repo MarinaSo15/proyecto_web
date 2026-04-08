@@ -111,7 +111,7 @@ nav a:hover {
    ----------------------------------------------------------- */
 
 section {
-    background-color: rgba(255, 255, 255, 0.85); /* Un poco más opaco para leer mejor */
+    background-color: rgba(255, 255, 255, 0.85); /* Volvemos al blanco con transparencia */
     margin: 40px auto;
     padding: 30px;
     max-width: 900px;
