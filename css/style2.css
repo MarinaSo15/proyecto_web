@@ -1,0 +1,233 @@
+/* =========================================
+   VARIABLES CSS (Requisito del Proyecto)
+   ========================================= */
+:root {
+    --color-texto: #333333;
+    --color-acento: #2E8B57; /* Verde Selva */
+    --fondo-nude: #fdfaf7;   /* Estilo Sommertage */
+    --blanco: #ffffff;
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-cuerpo: 'Inter', sans-serif;
+}
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Navegación suave entre secciones */
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--fondo-nude);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* --- PORTADA INMERSIVA (Efecto Ken Burns) --- */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Degradado oscuro para que se lea el texto + tu foto de Vietnam */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('../img/asia/myanmar/bagan1.png') no-repeat center center/cover;
+    z-index: -1;
+    animation: zoomLento 20s infinite alternate;
+}
+
+@keyframes zoomLento {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+}
+
+h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 4.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-style: italic;
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    opacity: 0.9;
+}
+
+/* --- NAVEGACIÓN (Sticky) --- */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(253, 250, 247, 0.98);
+    padding: 20px 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    margin: 0 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-acento);
+}
+
+/* --- CONTENEDORES Y SECCIONES --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+h2.titulo-elegante {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- GALERÍA Y DESPLEGABLES --- */
+details {
+    background: var(--blanco);
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+summary {
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--color-acento);
+    list-style: none;
+    outline: none;
+}
+
+.galeria-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsivo con Grid */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.galeria-mini img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(20%);
+    transition: all 0.4s ease;
+}
+
+.galeria-mini img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/* --- LIGHTBOX MODERNO --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenido-lightbox {
+    max-width: 85%;
+    max-height: 75%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+#caption {
+    margin-top: 20px;
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+.cerrar {
+    position: absolute;
+    top: 30px; right: 40px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* --- TABLAS (Preparada para Colspan/Rowspan) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 30px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-acento);
+    color: white;
+    font-family: var(--fuente-titulos);
+}
+
+/* --- FORMULARIO --- */
+form {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 25px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Importante para la logística del tamaño */
+}
+
+/* =========================================
+   MEDIA QUERIES (Requisito: Adaptación)
+   ========================================= */
+
+/* 1. Tamaño de pantalla (Móviles) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .galeria-mini { grid-template-columns: 1fr 1fr; }
+    nav a { margin: 0 5px; font-size: 0.7rem; }
+}
+
+/* 2. Adaptación para Impresora (Requisito PDF) */
+@media print {
+    nav, #hero, .cerrar, button { display: none; }
+    body { background: white; color: black; }
+    .container { width: 100%; padding: 0; }
+    details { border: 1px solid #000; page-break-inside: avoid; }
+}

@@ -3,169 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Marina | Sommertage Style</title>
+    <title>Bitácora Marina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-texto: #333;
-            --color-acento: #2E8B57;
-            --fondo-nude: #fdfaf7;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--fondo-nude);
-            color: var(--color-texto);
-            line-height: 1.6;
-        }
-
-        /* --- PORTADA TIPO SOMMERTAGE --- */
-        #hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            color: white;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('img/portadas/portada_vietnam1.jpg') no-repeat center center/cover;
-            z-index: -1;
-            /* Efecto Ken Burns (se agranda suavemente) */
-            animation: zoomLento 20s infinite alternate;
-        }
-
-        @keyframes zoomLento {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            opacity: 0.9;
-        }
-
-        /* --- NAVEGACIÓN ELEGANTE --- */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(253, 250, 247, 0.95);
-            padding: 20px 0;
-            z-index: 100;
-            border-bottom: 1px solid #eee;
-            text-align: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--color-texto);
-            margin: 0 20px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 400;
-        }
-
-        /* --- SECCIONES INMERSIVAS --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        h2.titulo-elegante {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--color-texto);
-        }
-
-        /* Estilo para los desplegables */
-        details {
-            background: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        summary {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            cursor: pointer;
-            list-style: none;
-            color: var(--color-acento);
-        }
-
-        .galeria-mini {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .galeria-mini img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .galeria-mini img:hover {
-            opacity: 0.8;
-        }
-
-        /* --- LIGHTBOX MODERNO --- */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98); /* Fondo blanco tipo Sommertage */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .contenido-lightbox {
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
-        }
-
-        .cerrar {
-            position: absolute;
-            top: 30px; right: 40px;
-            font-size: 40px;
-            cursor: pointer;
-            color: #333;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            font-style: italic;
-            background: #eee;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
 
@@ -173,7 +13,7 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1>Bitácora Marina</h1>
-            <p class="subtitle">Lugares, conservación y logística salvaje</p>
+            <p class="subtitle">Lugares, conservación y logística</p>
         </div>
     </section>
 
@@ -186,16 +26,94 @@
 
     <div class="container">
         <section id="asia">
-            <h2 class="titulo-elegante">Sudeste Asiático</h2>
+            <h2 class="titulo-elegante">SUDESTE ASIÁTICO</h2>
             <p style="text-align:center; font-style:italic; margin-bottom:40px;">Crónicas desde Myanmar</p>
-            
+
             <details>
-                <summary>MYANMAR: YANGÓN & BAGAN</summary>
+                <summary>YANGÓN (explora)</summary>
                 <div class="galeria-mini">
-                    <img src="img/asia/myanmar/yangon1.jpg" alt="Amanecer" onclick="abrirImagen(this)">
-                    <img src="img/asia/myanmar/bagan_globos.png" alt="Bagan" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/burma1.jpg" alt="Lecturas de viaje" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon1.jpg" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon2.webp" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon3.jpg" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon4.jpg" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon5.jpg" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon6.jpg" alt="Amanece en Pagoda Shwedagon" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon7.jpg" alt="Por las calles de Yangón" onclick="abrirImagen(this)">
+                    <img src="img/asia/myanmar/yangon8.jpg" alt="Por las calles de yangón" onclick="abrirImagen(this)">
                 </div>
             </details>
+
+            <details> 
+                <summary>MANDALAY Y MINGÚN (explora)</summary>
+                    <div class="galeria-mini">
+                        <img src="img/asia/myanmar/mandalay.jpg" alt="Por las calles de Mandalay"  onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mandalay7.jpg" alt="Monasterio en Mandalay"  onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/monjas_mandalay.jpg" alt="monjas Mandalay" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/monjas_mandalay2.jpg" alt="monjas margin-bottom" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mingun3.webp" alt="Mingun Paya" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mingun4.webp" alt="Mingun Paya" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mingun5.webp" alt="pagoda Hsinbyume" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mingun7.jpg" alt="pagoda Hsinbyume" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/mingun8.jpg" alt="pagoda Hsinbyume" onclick="abrirImagen(this)">                                                                                     
+                    </div>
+            </details>
+            <details>
+                <summary>U-BEIN (explora)</summary>
+                    <div class="galeria-mini">
+                        <img src="img/asia/myanmar/ubein.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein3.png" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein4.png" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein5.png" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein6.png" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein7.png" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein8.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein9.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein10.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein11.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein12.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ubein13.jpg" alt="Puente de U-Bein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/monasterio_mahagandhayon.jpg" alt="Mrauk-U" onclick="abrirImagen(this)">                                                                                
+                    </div>
+            </details>          
+            <details>
+                <summary>BAGAN (explora)</summary>
+                    <div class="galeria-mini">
+                        <img src="img/asia/myanmar/bagan_globos.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan1.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan2.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan3.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan4bis.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan5.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan7.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan9.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan10.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan11.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan12.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan13.jpg" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan14.png" alt="Bagan" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/bagan15.png" alt="Bagan" onclick="abrirImagen(this)">
+                    </div>
+            </details>      
+            
+            <details>
+                <summary>INLE Y HSIPAW (Explora)</summary>
+                    <div class="galeria-mini">
+                        <img src="img/asia/myanmar/inle.jpg" alt="pescador en lago Inle" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/inle2.jpg" alt="pescador en lago Inle" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/nyaung_shwe_market.jpg" alt="Mercado nyaung shwe" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/nyaung_shwe_market2.jpg" alt="Mercado nyaung shwe" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/Hsipaw.jpg" alt="Hsipaw" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/Hsipaw2.webp" alt="Hsipaw puente tren" onclick="abrirImagen(this)">                                   
+                        <img src="img/asia/myanmar/ruinas_de_indein2.jpg" alt="Ruinas Indein" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/ruinas_de_indein4.jpg" alt="Ruinas Indein" onclick="abrirImagen(this)">                                          
+                        <img src="img/asia/myanmar/kakku_pagodas.jpg" alt="Pagodas de kakku" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/kakku_pagodas2.jpg" alt="Pagodas de kakku" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/kakku_pagodas4.jpg" alt="Pagodas de kakku" onclick="abrirImagen(this)">
+                        <img src="img/asia/myanmar/Kakku_pagodas3.jpg" alt="Pagodas de kakku" onclick="abrirImagen(this)">                                                   
+                    </div>      
+            </details>   
+            
         </section>
 
         <section id="africa" style="margin-top:100px;">
