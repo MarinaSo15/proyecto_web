@@ -73,7 +73,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Logística de los desplegables */
+/* Los desplegables */
 .dropdown { position: relative; display: inline-block; }
 
 .dropdown-content {
@@ -112,13 +112,27 @@ h2.titulo-elegante {
 details { margin-bottom: 15px; padding: 10px; }
 
 summary {
-    cursor: pointer;
-    font-weight: bold;
+    cursor: pointer; /* Cambia la flecha por la mano de pinchar */
+    font-weight: 400; 
     color: var(--color-acento);
     font-family: var(--fuente-titulos);
-    font-size: 1.2rem;
+    font-size: 1.1rem; 
     list-style: none;
+    padding: 8px 15px; /* Le damos un poco de "área" para pinchar mejor */
+    transition: all 0.3s ease; /* Hace que el movimiento sea suave, no brusco */
+    display: inline-block; /* Para que el efecto de fondo quede bien recogido */
+    border-radius: 4px;
 }
+
+/* EL EFECTO AL PASAR EL RATÓN */ 
+summary:hover::before {
+    content: "→ "; /* Aparece una flechita de guía */
+    font-weight: bold;
+    background-color: rgba(46, 139, 87, 0.08); /* Un fondo verde muy clarito */
+    padding-left: 25px; /* Se desplaza un poco a la derecha (efecto invitación) */
+    color: #1a4a2e; /* El texto se oscurece un poco */
+}
+
 
 /* Requisito #8: Galería con Flexbox */
 .galeria-mini {
@@ -145,15 +159,19 @@ summary {
     padding: 0;
 }
 
+/* EL JEFE: La Región (Grande pero con tu estilo original) */
 .subtitulo-region {
     font-family: var(--fuente-titulos);
-    font-size: 1.8rem;
+    font-size: 2.2rem; 
     font-style: italic;
     color: var(--color-texto);
-    margin-top: 40px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    display: inline-block;
-    padding-bottom: 5px;
+    margin-top: 60px; /* Un poco más de espacio arriba para separar regiones */
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-acento); 
+    display: block; /* Cambiamos a block para que ocupe su propia línea y respete la izquierda */
+    padding-bottom: 10px;
+    text-align: left; /* Aseguramos la alineación a la izquierda */
+    width: fit-content; /* La línea del borde solo llegará hasta donde termine el texto */
 }
 
 .intro-region {
@@ -162,12 +180,59 @@ summary {
     margin-bottom: 20px;
 }
 
+/*  REGLA PARA EL PAÍS, subordinado de región */
+
+.destacado-pais {
+    font-family: var(--fuente-cuerpo); /* Usamos la letra limpia 'Inter' */
+    font-size: 1.1rem; /* Un poco más pequeña */
+    color: #666; /* Un gris más suave */
+    margin-bottom: 30px; 
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+/* Y para que la palabra MYANMAR sí destaque dentro de esa frase: */
+.destacado-pais strong {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-texto);
+    text-transform: uppercase;
+}
+
 .proximamente {
     padding: 20px;
     background: rgba(0,0,0,0.02);
     border-radius: 4px;
     font-style: italic;
     color: #888;
+}
+
+
+.foto-pais-portada {
+    width: 100%;
+    max-width: 800px; /* Un poco más estrecha para que sea elegante */
+    height: auto;     /* <--- CAMBIO CLAVE: Altura automática */
+    margin: 40px auto; 
+    overflow: hidden; 
+    border-radius: 12px; /* Esquinas más redondeadas quedan mejor en fotos grandes */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.foto-pais-portada img {
+    width: 100%;
+    height: auto;     /* <--- CAMBIO CLAVE: Que no se corte nada */
+    display: block;
+}
+
+/* El toque para que MYANMAR sí sea elegante dentro de la frase */
+.destacado-pais strong {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* ==============================================================
@@ -194,7 +259,6 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
     flex-direction: column; /* <--- texto debajo de la foto */
 }
 
-.contenido-lightbox { max-width: 85%; max-height: 80%; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
 .cerrar { position: absolute; top: 20px; right: 30px; font-size: 40px; cursor: pointer; color: #333; }
 
 #caption {

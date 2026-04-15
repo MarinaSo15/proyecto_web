@@ -112,5 +112,23 @@
             </video>
         </section>
     </div>
+
+<div id="miLightbox" class="lightbox" onclick="cerrarImagen()">
+    <span class="cerrar">&times;</span>
+    <img class="contenido-lightbox" id="imagenGrande">
+    <div id="caption"></div> </div>
+
+<script>
+    function abrirImagen(elemento) {
+        document.getElementById("miLightbox").style.display = "flex";
+        document.getElementById("imagenGrande").src = elemento.src;
+        document.getElementById("caption").innerHTML = elemento.alt; // Aquí lee el texto del 'alt'
+    }
+    function cerrarImagen() {
+        document.getElementById("miLightbox").style.display = "none";
+    }
+</script>
+
+
 </body>
 </html>
