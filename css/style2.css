@@ -10,7 +10,15 @@
     --fuente-cuerpo: 'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth !important; 
+}
+
+/* Aplicar margen a cualquier elemento que tenga un ID 
+   para asegurar que el menú no lo tape  */
+[id] {
+    scroll-margin-top: 120px; 
+}
 
 body {
     margin: 0;
