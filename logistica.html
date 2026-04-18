@@ -13,20 +13,22 @@
 
         <span class="separador">•</span>
 
-        <div class="dropdown">            
-            <a href="asia.html" class="dropbtn">Asia</a>
-                <div class="dropdown-content">
-                    <a href="asia.html#seccion-myanmar">Myanmar</a>
-                        <a href="asia.html#seccion-indonesia">Indonesia</a>
-                        <a href="asia.html#seccion-japon">Japón</a>
-                        <a href="asia.html#seccion-china">China</a>
-                        <a href="proximamente.html">Filipinas</a>
-                        <a href="proximamente.html">Tailandia</a>
-                        <a href="proximamente.html">Vietnam</a>
-                        <a href="proximamente.html">Malasia</a>
-                        <a href="proximamente.html">Singapur</a>
-                </div>
-        </div>
+    <div class="dropdown">            
+        <a href="asia.html" class="dropbtn">Asia</a>
+            <div class="dropdown-content">
+                <a href="asia.html#seccion-myanmar">Myanmar</a>
+                <a href="asia.html#seccion-indonesia">Indonesia</a>
+                <a href="asia.html#seccion-tailandia">Tailandia</a>
+                <a href="asia.html#seccion-vietnam">Vietnam</a>
+                <a href="asia.html#seccion-camboya">Camboya</a>
+                <a href="asia.html#seccion-laos">Laos</a>
+                <a href="asia.html#seccion-filipinas">Filipinas</a>
+                <a href="asia.html#seccion-malasia">Malasia</a>
+                <a href="asia.html#seccion-singapur">Singapur</a>
+                <a href="asia.html#seccion-japon">Japón</a>
+                <a href="asia.html#seccion-china">China</a>
+            </div>
+    </div>
 
         <span class="separador">•</span>
 
@@ -90,58 +92,81 @@
     </div> 
 </nav>
 
-    <div class="container">
-        <section id="planificacion">
-            <h2 class="titulo-elegante">Logística de Expedición</h2>
-            <p class="intro-region" style="text-align:center;">Planificación técnica para áreas protegidas.</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Detalle del Trámite</th>
-                        <th>Prioridad</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="2">DOCUMENTACIÓN</td> <td>Visado República Democrática del Congo</td>
-                        <td>Alta</td>
-                        <td>Tramitado</td>
-                    </tr>
-                    <tr>
-                        <td>Permisos de Investigación en Parques</td>
-                        <td>Alta</td>
-                        <td>Confirmado</td>
-                    </tr>
-                    <tr>
-                        <td>SALUD</td>
-                        <td colspan="2">Fiebre Amarilla y Profilaxis Malaria</td> <td>Obligatorio</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <<div class="container">
+    <section id="planificacion">
+        <h2 class="titulo-elegante">Logística de Expedición 📦</h2>
+        <p class="intro-region" style="text-align:center;">
+            Gestión de suministros y protocolos de transporte en entornos de alta complejidad.
+        </p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Área Logística</th>
+                    <th>Gestión de Operaciones</th>
+                    <th>Requerimiento Técnico</th>
+                    <th>Impacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><strong>COMERCIO EXTERIOR</strong></td>
+                    <td>Tramitación de Cuadernos ATA para equipo óptico</td>
+                    <td>Temporal</td>
+                    <td>Exención de aranceles</td>
+                </tr>
+                <tr>
+                    <td>Permisos CITES para tránsito en áreas protegidas</td>
+                    <td>Crítico</td>
+                    <td>Legalidad Internacional</td>
+                </tr>
+                <tr>
+                    <td><strong>CADENA DE SUMINISTRO</strong></td>
+                    <td colspan="2">Gestión de suministros médicos y kits de emergencia en zonas remotas</td>
+                    <td>Sostenibilidad</td>
+                </tr>
+                <tr>
+                    <td><strong>MOVILIDAD</strong></td>
+                    <td>Optimización de rutas multimodales (Fluvial/Terrestre)</td>
+                    <td>Planificado</td>
+                    <td>Bajo impacto ambiental</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
+    <div style="max-width: 700px; margin: 60px auto; padding: 30px; border-left: 3px solid var(--color-acento); background: rgba(46,139,87,0.05);">
+        <p style="font-family: var(--fuente-titulos); font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--color-texto); margin: 0;">
+            "Advanced logistics strategies are proven to have reduced environmental impact in protected areas."
+        </p>
+        <p style="font-size: 0.85rem; color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">
+            — Pilastra estratégica de gestión
+        </p>
     </div>
-
-    <p style="text-align:center; margin-top:40px; font-style:italic;">
-    "Las estrategias logísticas avanzadas han demostrado reducir el impacto ambiental en áreas protegidas."
-</p>
+</div>
 
 <div id="miLightbox" class="lightbox" onclick="cerrarImagen()">
     <span class="cerrar">&times;</span>
     <img class="contenido-lightbox" id="imagenGrande">
-    <div id="caption"></div> </div>
+    <div id="caption"></div> 
+</div>
 
 <script>
     function abrirImagen(elemento) {
-        document.getElementById("miLightbox").style.display = "flex";
+        const lightbox = document.getElementById("miLightbox");
+        lightbox.style.display = "flex";
         document.getElementById("imagenGrande").src = elemento.src;
-        document.getElementById("caption").innerHTML = elemento.alt; // Aquí lee el texto del 'alt'
+        document.getElementById("caption").innerHTML = elemento.alt;
+        
+        // BLOQUEO: Evita que el fondo se mueva y cause efectos raros
+        document.body.style.overflow = "hidden";
     }
+
     function cerrarImagen() {
         document.getElementById("miLightbox").style.display = "none";
+        
+        // LIBERACIÓN: Devuelve el control del scroll al usuario
+        document.body.style.overflow = "auto";
     }
 </script>
 

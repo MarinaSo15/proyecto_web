@@ -19,14 +19,16 @@
             <a href="asia.html" class="dropbtn">Asia</a>
                 <div class="dropdown-content">
                     <a href="asia.html#seccion-myanmar">Myanmar</a>
-                        <a href="asia.html#seccion-indonesia">Indonesia</a>
-                        <a href="asia.html#seccion-japon">Japón</a>
-                        <a href="asia.html#seccion-china">China</a>
-                        <a href="proximamente.html">Filipinas</a>
-                        <a href="proximamente.html">Tailandia</a>
-                        <a href="proximamente.html">Vietnam</a>
-                        <a href="proximamente.html">Malasia</a>
-                        <a href="proximamente.html">Singapur</a>
+                    <a href="asia.html#seccion-indonesia">Indonesia</a>
+                    <a href="asia.html#seccion-tailandia">Tailandia</a>
+                    <a href="asia.html#seccion-vietnam">Vietnam</a>
+                    <a href="asia.html#seccion-camboya">Camboya</a>
+                    <a href="asia.html#seccion-laos">Laos</a>
+                    <a href="asia.html#seccion-filipinas">Filipinas</a>
+                    <a href="asia.html#seccion-malasia">Malasia</a>
+                    <a href="asia.html#seccion-singapur">Singapur</a>
+                    <a href="asia.html#seccion-japon">Japón</a>
+                    <a href="asia.html#seccion-china">China</a>
                 </div>
         </div>
 
@@ -97,8 +99,8 @@
             <h2 class="titulo-elegante">Exploración en curso</h2>
             
             <div class="proximamente">
-                <p>Actualmente me encuentro clasificando el material fotográfico y redactando las crónicas de esta región.</p>
-                <p>La logística de estos viajes es compleja y requiere tiempo para ser contada con detalle.</p>
+                <p>Actualmente me encuentro clasificando el material fotográfico y redactando crónicas de la zona.</p>
+                <p>Es complejo y requiere tiempo.</p>
                 <p style="margin-top: 30px;"><strong>Vuelve pronto para seguir el rastro de la bitácora.</strong></p>
             </div>
 
@@ -115,12 +117,20 @@
 
 <script>
     function abrirImagen(elemento) {
-        document.getElementById("miLightbox").style.display = "flex";
+        const lightbox = document.getElementById("miLightbox");
+        lightbox.style.display = "flex";
         document.getElementById("imagenGrande").src = elemento.src;
-        document.getElementById("caption").innerHTML = elemento.alt; // Aquí lee el texto del 'alt'
+        document.getElementById("caption").innerHTML = elemento.alt;
+        
+        // BLOQUEO: Evita que el fondo se mueva y cause efectos raros
+        document.body.style.overflow = "hidden";
     }
+
     function cerrarImagen() {
         document.getElementById("miLightbox").style.display = "none";
+        
+        // LIBERACIÓN: Devuelve el control del scroll al usuario
+        document.body.style.overflow = "auto";
     }
 </script>
 

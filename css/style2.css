@@ -10,9 +10,6 @@
     --fuente-cuerpo: 'Inter', sans-serif;
 }
 
-html { 
-    scroll-behavior: smooth !important; 
-}
 
 /* Aplicar margen a cualquier elemento que tenga un ID 
    para asegurar que el menú no lo tape  */
@@ -108,6 +105,15 @@ body {
 /* ==============================================================
    4. SECCIONES Y GALERÍA 
    ============================================================== */
+
+/* --- SEPARADOR ELEGANTE DE PAÍSES--- */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    margin: 80px 0; /* Esto da un respiro enorme entre países */
+}
+
 .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
 h2.titulo-elegante {
@@ -152,7 +158,7 @@ summary:hover::before {
 }
 
 .galeria-mini img {
-    width: 150px; /* Tamaño que te gusta */
+    width: 150px; /* Tamaño que me gusta */
     height: 100px;
     object-fit: cover;
     cursor: pointer;
@@ -162,12 +168,19 @@ summary:hover::before {
 .galeria-mini img:hover { transform: scale(1.05); opacity: 0.9; }
 
 /* Estilo para las sub-regiones */
-.lista-continente {
-    list-style: none; /* Quitamos los puntos de lista para que sea minimalista */
-    padding: 0;
+
+/* Línea vertical a la izquierda que conecte países de una misma región */
+
+.lista-continente li {
+    position: relative;
+    padding-left: 30px;
+    border-left: 1px solid var(--color-acento); /* La línea verde de tu marca */
+    margin-bottom: 80px;
 }
 
-/* EL JEFE: La Región (Grande pero con tu estilo original) */
+
+
+/* La Región (Grande pero con estilo original) */
 .subtitulo-region {
     font-family: var(--fuente-titulos);
     font-size: 2.2rem; 
@@ -197,9 +210,17 @@ summary:hover::before {
     margin-bottom: 30px; 
     letter-spacing: 0.5px;
     text-transform: none;
+
+    /* --- AÑADO NUEVO PARA SEPARAR PAÍSES --- */
+    margin-top: 80px;           /* Empuja el país hacia abajo para que no esté pegado a la intro */
+    padding-top: 30px;          /* Espacio entre la línea y el nombre del país */
+    border-top: 1px solid #eee; /* Una línea sutil que separa la región del país */
+    display: block;             /* Asegura que respete los márgenes */
 }
 
-/* Y para que la palabra MYANMAR sí destaque dentro de esa frase: */
+
+
+/* para que paíse pe MYANMAR, sí destaquen dentro de la frase: */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -216,7 +237,7 @@ summary:hover::before {
     color: #888;
 }
 
-
+/* --- LA CAJA QUE CONTIENE TODO --- */
 .foto-pais-portada {
     width: 100%;
     max-width: 800px; /* Un poco más estrecha para que sea elegante */
@@ -231,6 +252,17 @@ summary:hover::before {
     width: 100%;
     height: auto;     /* <--- CAMBIO CLAVE: Que no se corte nada */
     display: block;
+}
+
+.pie-foto {
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #777;
+    margin-top: 15px;
+    padding: 0 20px;
+    line-height: 1.4;
 }
 
 /* El toque para que MYANMAR sí sea elegante dentro de la frase */
@@ -259,12 +291,19 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
 .lightbox {
     display: none;
     position: fixed; 
-    z-index: 2000;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999; /* Máxima prioridad: nada pasará por encima */
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* Fondo sólido: elimina las transparencias para evitar ver fotos detrás */
+    background-color: var(--fondo-nude); 
+    
     justify-content: center; 
     align-items: center;
-    flex-direction: column; /* <--- texto debajo de la foto */
+    flex-direction: column;
+    overflow: hidden; /* Evita que el propio lightbox haga scroll */
 }
 
 .cerrar { position: absolute; top: 20px; right: 30px; font-size: 40px; cursor: pointer; color: #333; }
@@ -297,4 +336,67 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
 @media print {
     nav, #hero, .cerrar, form { display: none; }
     body { background: white; }
+}
+
+/* ==============================================================
+   8. SECCIÓN SOBRE MÍ (Perfil)
+   ============================================================= */
+.foto-perfil-contenedor {
+    text-align: center;
+    margin: 40px auto 30px;
+    width: 90%;           /* Deja un poco de aire a los lados */
+    max-width: 500px;     /* Al ser vertical, mejor que no sea Gigante de ancho */
+}
+
+.foto-perfil {
+    width: 100%;          /* Se ajusta al ancho del contenedor */
+    height: auto;         /* ¡CLAVE! La altura se ajusta sola para que se vea ENTERA */
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;  /* Esquinas suaves */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+/* ==============================================================
+   7. SECCIÓN SOBRE MÍ (Galería de Autor)
+   ============================================================= */
+.galeria-perfil {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto 50px;
+    max-width: 1000px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Por si en el móvil se quedan muy apretadas, que bajen */
+}
+
+.galeria-perfil figure {
+    flex: 1;
+    min-width: 250px; /* Evita que se hagan diminutas */
+    margin: 0;
+    text-align: center;
+}
+
+.galeria-perfil img {
+    width: 100%;
+    height: 350px;     /* Altura fija para que todas las fotos queden alineadas */
+    object-fit: cover; /* Recorta el exceso para que todas tengan el mismo tamaño */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.galeria-perfil img:hover {
+    transform: translateY(-5px); /* Efecto sutil de levante */
+}
+
+.pie-foto-principal {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #888;
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    letter-spacing: 0.5px;
 }
