@@ -38,13 +38,30 @@ body {
     text-align: center;
 }
 
+/* La capa que contiene las imágenes */
 .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('../img/asia/myanmar/bagan1.png') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: -1;
+    opacity: 0; /* Empiezan invisibles */
+    transition: opacity 1.5s ease-in-out; /* El cambio suave */
     animation: zoomLento 20s infinite alternate;
+}
+
+/* El filtro oscuro para que el texto siempre sea legible */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* El sombreado que tenías en el linear-gradient */
+    z-index: 0; /* Por encima de la imagen pero por debajo del texto */
+}
+
+.hero-bg.active {
+    opacity: 1; /* Solo la imagen con esta clase se ve */
 }
 
 @keyframes zoomLento {
@@ -52,8 +69,21 @@ body {
     to { transform: scale(1.1); }
 }
 
-#hero h1 { font-family: var(--fuente-titulos); font-size: 4rem; margin: 0; }
-.subtitle { font-family: var(--fuente-titulos); font-style: italic; font-size: 1.5rem; }
+#hero h1 { 
+    font-family: var(--fuente-titulos); 
+    font-size: 4rem; 
+    margin: 0; 
+    position: relative; /* ¡Añadido! */
+    z-index: 2;        /* ¡Añadido! */
+}
+
+.subtitle { 
+    font-family: var(--fuente-titulos); 
+    font-style: italic; 
+    font-size: 1.5rem; 
+    position: relative; /* ¡Añadido! */
+    z-index: 2;        /* ¡Añadido! */
+}
 
 /* ==============================================================
    3. NAVEGACIÓN (Menú con Desplegables)
@@ -399,4 +429,57 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
     font-family: var(--fuente-titulos);
     font-style: italic;
     letter-spacing: 0.5px;
+}
+
+/* ==============================================================
+   8. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
+   ============================================================= */
+   
+.foto-flotante-izq {
+    float: left;
+    width: 220px;
+    margin: 10px 25px 15px 0;
+}
+
+.foto-flotante-der {
+    float: right;
+    width: 220px;
+    margin: 10px 0 15px 25px;
+}
+
+.foto-flotante-izq img, 
+.foto-flotante-der img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+
+    /* PASO 1: Añade estas 3 líneas aquí abajo para preparar el zoom */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: zoom-in;
+    position: relative;
+}
+
+/* PASO 2: Añade este bloque nuevo justo aquí */
+.foto-flotante-izq img:hover, 
+.foto-flotante-der img:hover {
+    transform: scale(1.8); /* Amplía la foto */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    z-index: 10; /* La pone por encima del texto */
+}
+
+.pie-foto-mini {
+    font-size: 0.75rem;
+    color: #999;
+    font-family: var(--fuente-titulos);
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.contenido-perfil::after {
+    content: "";
+    display: table;
+    clear: both;
 }
