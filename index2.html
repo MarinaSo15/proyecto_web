@@ -14,7 +14,13 @@
     
         <div class="hero-bg" style="background-image: url('img/africa/rd_congo/lwiro_primates1.jpg');"></div>
 
-        <div class="hero-bg" style="background-image: url('img/asia/myanmar/monjas_mandalay.jpg');"></div>
+        <div class="hero-bg" style="background-image: url('img/asia/myanmar/monjas_mandalay2.png');"></div>
+
+        <div class="hero-bg" style="background-image: url('img/africa/rd_congo/kahuzi_bonane22.jpg');"></div>
+
+        <div class="hero-bg" style="background-image: url('img/asia/japón/kumano_kodo2.jpg');"></div>
+
+        <div class="hero-bg" style="background-image: url('img/asia/sri_lanka/nuwara_eliya1.png"></div>
 
         <div class="hero-content">
             <h1>Bitácora Marina</h1>
@@ -127,24 +133,34 @@
     <div id="caption"></div> </div>
 
 <script>
-    function abrirImagen(elemento) {
-        const lightbox = document.getElementById("miLightbox");
-        lightbox.style.display = "flex";
-        document.getElementById("imagenGrande").src = elemento.src;
-        document.getElementById("caption").innerHTML = elemento.alt;
-        
-        // BLOQUEO: Evita que el fondo se mueva y cause efectos raros
-        document.body.style.overflow = "hidden";
-    }
+        /* 1. MOTOR DEL CARRUSEL (Para que las fotos roten solas) */
+        let index = 0;
+        const backgrounds = document.querySelectorAll('.hero-bg');
+        const tiempoCambio = 4000; 
 
-    function cerrarImagen() {
-        document.getElementById("miLightbox").style.display = "none";
-        
-        // LIBERACIÓN: Devuelve el control del scroll al usuario
-        document.body.style.overflow = "auto";
-    }
-</script>
+        function cambiarFondo() {
+            backgrounds[index].classList.remove('active');
+            index = (index + 1) % backgrounds.length;
+            backgrounds[index].classList.add('active');
+        }
+        setInterval(cambiarFondo, tiempoCambio);
+    </script>
 
+    <script>
+        /* 2. MOTOR DEL LIGHTBOX (Para ampliar el video o fotos) */
+        function abrirImagen(elemento) {
+            const lightbox = document.getElementById("miLightbox");
+            lightbox.style.display = "flex";
+            document.getElementById("imagenGrande").src = elemento.src;
+            document.getElementById("caption").innerHTML = elemento.alt;
+            document.body.style.overflow = "hidden";
+        }
+
+        function cerrarImagen() {
+            document.getElementById("miLightbox").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
 
 </body>
 </html>

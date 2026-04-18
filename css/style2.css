@@ -27,18 +27,20 @@ body {
 /* ==============================================================
    2. PORTADA (Efecto Ken Burns)
    ============================================================== */
+/* 1. Modifica el contenedor principal del Hero */
 #hero {
     position: relative;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Esto empuja el contenido ABAJO y a la IZQUIERDA */
+    align-items: flex-end; 
+    justify-content: flex-start;
     overflow: hidden;
     color: white;
-    text-align: center;
+    text-align: left;
 }
 
-/* La capa que contiene las imágenes */
+/* La capa que contiene las imágenes, zoom y rotación */
 .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -51,22 +53,20 @@ body {
     animation: zoomLento 20s infinite alternate;
 }
 
+.hero-bg.active {
+    opacity: 1; /* Solo la imagen con esta clase se ve */
+}
+
 /* El filtro oscuro para que el texto siempre sea legible */
 #hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* El sombreado que tenías en el linear-gradient */
+    /* Añadimos una textura de puntos sobre el color oscuro */
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 1px, transparent 1px), 
+                rgba(0, 0, 0, 0.4); 
+    background-size: 3px 3px; /* Tamaño de los puntos */
     z-index: 0; /* Por encima de la imagen pero por debajo del texto */
-}
-
-.hero-bg.active {
-    opacity: 1; /* Solo la imagen con esta clase se ve */
-}
-
-@keyframes zoomLento {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
 }
 
 #hero h1 { 
@@ -83,6 +83,11 @@ body {
     font-size: 1.5rem; 
     position: relative; /* ¡Añadido! */
     z-index: 2;        /* ¡Añadido! */
+}
+
+@keyframes zoomLento {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
 }
 
 /* ==============================================================
