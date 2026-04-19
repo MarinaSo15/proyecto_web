@@ -141,7 +141,7 @@ body {
    4. SECCIONES Y GALERÍA 
    ============================================================== */
 
-/* --- SEPARADOR ELEGANTE DE PAÍSES--- */
+/* --- SEPARADOR DE PAÍSES--- */
 hr {
     border: 0;
     height: 1px;
@@ -202,9 +202,8 @@ summary:hover::before {
 
 .galeria-mini img:hover { transform: scale(1.05); opacity: 0.9; }
 
-/* Estilo para las sub-regiones */
-
-/* Línea vertical a la izquierda que conecte países de una misma región */
+/* Estilo para las sub-regiones
+Línea vertical a la izquierda que conecta países de una misma región */
 
 .lista-continente li {
     position: relative;
@@ -215,7 +214,7 @@ summary:hover::before {
 
 
 
-/* La Región (Grande pero con estilo original) */
+/* La Región (Grande) */
 .subtitulo-region {
     font-family: var(--fuente-titulos);
     font-size: 2.2rem; 
@@ -251,11 +250,13 @@ summary:hover::before {
     padding-top: 30px;          /* Espacio entre la línea y el nombre del país */
     border-top: 1px solid #eee; /* Una línea sutil que separa la región del país */
     display: block;             /* Asegura que respete los márgenes */
+
+    /* --- LOGÍSTICA DE NAVEGACIÓN --- */
+    scroll-margin-top: 100px; /* Evita que el menú tape el título al saltar */
 }
 
 
-
-/* para que paíse pe MYANMAR, sí destaquen dentro de la frase: */
+/* para que países sí destaquen dentro de la frase: */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -272,20 +273,20 @@ summary:hover::before {
     color: #888;
 }
 
-/* --- LA CAJA QUE CONTIENE TODO --- */
+/* LA CAJA QUE CONTIENE TODO */
 .foto-pais-portada {
     width: 100%;
-    max-width: 800px; /* Un poco más estrecha para que sea elegante */
-    height: auto;     /* <--- CAMBIO CLAVE: Altura automática */
+    max-width: 800px; /* Un poco más estrecha  */
+    height: auto;     /* Altura automática */
     margin: 40px auto; 
     overflow: hidden; 
-    border-radius: 12px; /* Esquinas más redondeadas quedan mejor en fotos grandes */
+    border-radius: 12px; /* Esquinas más redondeadas */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .foto-pais-portada img {
     width: 100%;
-    height: auto;     /* <--- CAMBIO CLAVE: Que no se corte nada */
+    height: auto;     /* Que no se corte nada */
     display: block;
 }
 
@@ -300,7 +301,7 @@ summary:hover::before {
     line-height: 1.4;
 }
 
-/* El toque para que MYANMAR sí sea elegante dentro de la frase */
+/* El toque para que país se resalte dentro de la frase */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -319,6 +320,27 @@ th { background-color: var(--color-acento); color: white; }
 
 form { background: white; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px solid #ccc; box-sizing: border-box; }
+
+
+/* Estilo para el botón de enviar formulario */
+
+button[type="submit"] {
+    background: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-family: var(--fuente-titulos);
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón */
+button[type="submit"]:hover {
+    background-color: #1e5c3a !important; /* Verde más oscuro al contacto */
+}
 
 /* ==============================================================
    6. LIGHTBOX (Fondo Blanco Elegante)
@@ -393,9 +415,7 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
     border: 1px solid #eee;
 }
 
-/* ==============================================================
-   7. SECCIÓN SOBRE MÍ (Galería de Autor)
-   ============================================================= */
+/*Galería de Autor */
 .galeria-perfil {
     display: flex;
     gap: 20px;
@@ -437,7 +457,7 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
 }
 
 /* ==============================================================
-   8. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
+   9. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
    ============================================================= */
    
 .foto-flotante-izq {
@@ -460,13 +480,13 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     border: 1px solid #eee;
 
-    /* PASO 1: Añade estas 3 líneas aquí abajo para preparar el zoom */
+    /* preparar el zoom */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: zoom-in;
     position: relative;
 }
 
-/* PASO 2: Añade este bloque nuevo justo aquí */
+/* bloque nuevo izq y derecha */
 .foto-flotante-izq img:hover, 
 .foto-flotante-der img:hover {
     transform: scale(1.8); /* Amplía la foto */
@@ -483,8 +503,45 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px s
     font-style: italic;
 }
 
+/* Limpieza de flotante para que texto no se rompa) */
 .contenido-perfil::after {
     content: "";
     display: table;
     clear: both;
 }
+
+/* ==============================================================
+   10. BOTONES DE EXPLORACIÓN (Sección Sobre Mí)
+   ============================================================== */
+
+.boton-simple {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1.5px solid var(--color-acento, #2e8b57); /* Si no detecta la variable, usa verde */
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--color-acento, #2e8b57);
+    font-family: var(--fuente-cuerpo, 'Inter', sans-serif);
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.boton-simple:hover {
+    background-color: var(--color-acento, #2e8b57);
+    color: white !important;
+}
+
+/* Estilo para países que aún no tienen contenido */
+.boton-simple.deshabilitado {
+    border: 1px solid #ddd;
+    color: #aaa;
+    font-weight: normal;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ==============================================================
+   11. NAVEGACIÓN (Menú con Desplegables)
+   ============================================================== */
