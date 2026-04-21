@@ -509,21 +509,24 @@ button[type="submit"]:hover {
     z-index: 10; /* La pone por encima del texto */
 }
 
+
 .pie-foto-mini {
-    font-size: 0.75rem;
-    color: #999;
-    font-family: var(--fuente-titulos);
-    text-align: center;
-    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #0a0a0a !important; /* más oscuro para que se lea bien */
+    margin-top: 0.5px !important; /* se pega a la foto */
+    line-height: 1.2;
     font-style: italic;
+    text-align: center;
+    display: block;
 }
 
-/* Limpieza de flotante para que texto no se rompa) */
+/* para que el texto no se monte en las fotos */
 .contenido-perfil::after {
     content: "";
     display: table;
     clear: both;
 }
+
 
 /* ==============================================================
    10. BOTONES DE EXPLORACIÓN (Sección Sobre Mí)
