@@ -531,16 +531,21 @@ button[type="submit"]:hover {
 /* ==============================================================
    9. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
    ============================================================= */
-   
+
+.foto-flotante-izq, 
+.foto-flotante-der {
+    width: 220px;          /* El ancho que tenías */
+    display: table;        /* CLAVE: Obliga al pie a quedarse pegado al ancho de la foto */
+    position: relative;
+}
+
 .foto-flotante-izq {
     float: left;
-    width: 220px;
     margin: 10px 25px 15px 0;
 }
 
 .foto-flotante-der {
     float: right;
-    width: 220px;
     margin: 10px 0 15px 25px;
 }
 
@@ -548,35 +553,42 @@ button[type="submit"]:hover {
 .foto-flotante-der img {
     width: 100%;
     height: auto;
+    display: block;        /* Quita el espacio extra bajo la imagen */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     border: 1px solid #eee;
-
-    /* preparar el zoom */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: zoom-in;
-    position: relative;
 }
 
-/* bloque nuevo izq y derecha */
+/* Efecto zoom */
 .foto-flotante-izq img:hover, 
 .foto-flotante-der img:hover {
-    transform: scale(1.8); /* Amplía la foto */
+    transform: scale(1.8);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    z-index: 10; /* La pone por encima del texto */
+    z-index: 10;
 }
 
-
-
+/* EL PIE DE FOTO MINI (Para que quede debajo y pegado) */
+.pie-foto-mini {
+    display: block;
+    font-size: 0.85rem;
+    color: #0a0a0a !important; 
+    margin-top: 6px !important; /* Aquí controlas la cercanía a la foto */
+    line-height: 1.3;
+    font-family: var(--fuente-cuerpo);
+    font-style: italic !important;
+    text-align: center;
+}
 
 /* Ajuste de pie de foto de las imágenes grandes */
 .pie-foto {
-    color: #050505 !important; /* mismo negro que la mini */
+    color: #050505 !important;
     font-family: var(--fuente-cuerpo);
-    font-weight: 500; /* Un pelín más de cuerpo para que no se vea "flaca" */
+    font-weight: 500;
     font-size: 0.9rem;
     margin-top: 10px;
-    opacity: 1 !important; /* Quita transparencia */
+    opacity: 1 !important;
     text-align: center;
     display: block;
 }
@@ -587,7 +599,6 @@ button[type="submit"]:hover {
     display: table;
     clear: both;
 }
-
 
 
 /* ==============================================================
@@ -671,4 +682,16 @@ h1 {
 .enlace-social:hover {
     opacity: 0.6;
     text-decoration: underline;
+}
+
+/* ==============================================================
+   13. Proximamente
+   ============================================================== */
+
+   .proximamente p {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
