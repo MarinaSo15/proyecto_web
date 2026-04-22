@@ -10,10 +10,11 @@
     --fuente-cuerpo: 'Inter', sans-serif;
 }
 
-/* Aplicar margen a cualquier elemento que tenga un ID 
-   para asegurar que el menú no lo tape  */
+/* Aplicar margen a ID 
+   para intentar q menú no lo tape  */
+
 [id] {
-    scroll-margin-top: 120px; 
+    scroll-margin-top: 160px; /* Aumento de 120px a 160px */
 }
 
 body {
@@ -23,9 +24,9 @@ body {
     color: var(--color-texto);
 }
 
-/* AQUÍ VA LA REGLA GENERAL PARA EL CONTENIDO */
+/* REGLA GENERAL PARA EL CONTENIDO*/
 main {
-    margin-top: 100px; /* Esto empuja el contenido hacia abajo en TODAS las páginas */
+    margin-top: 140px; /* Empuja el contenido hacia abajo en TODAS las páginas */
     padding: 20px;
     display: block;
 }
@@ -166,6 +167,11 @@ hr {
 
 .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
+/* Espacio al final de los bloques de contenido */
+article, .container-tablas, .contenido-perfil {
+    margin-bottom: 100px !important; 
+}
+
 h2.titulo-elegante {
     font-family: var(--fuente-titulos);
     font-size: 2.8rem;
@@ -271,7 +277,7 @@ Línea vertical a la izquierda que conecta países de una misma región */
 }
 
 
-/* para que países sí destaquen dentro de la frase: */
+/* para q países destaquen dentro de la frase: */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -288,20 +294,20 @@ Línea vertical a la izquierda que conecta países de una misma región */
     color: #888;
 }
 
-/* LA CAJA QUE CONTIENE TODO */
+/* La caja q contiene el todo */
 .foto-pais-portada {
     width: 100%;
-    max-width: 800px; /* Un poco más estrecha  */
+    max-width: 800px; /* Más estrecha  */
     height: auto;     /* Altura automática */
     margin: 40px auto; 
     overflow: hidden; 
-    border-radius: 12px; /* Esquinas más redondeadas */
+    border-radius: 12px; /* Esquinas  redondeadas */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .foto-pais-portada img {
     width: 100%;
-    height: auto;     /* Que no se corte nada */
+    height: auto;     /* Que no se corte la foto */
     display: block;
 }
 
@@ -316,7 +322,7 @@ Línea vertical a la izquierda que conecta países de una misma región */
     line-height: 1.4;
 }
 
-/* El toque para que país se resalte dentro de la frase */
+/* Para que país se resalte dentro de la frase */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -327,34 +333,70 @@ Línea vertical a la izquierda que conecta países de una misma región */
 }
 
 /* ==============================================================
-   5. TABLAS, FORMULARIOS Y VÍDEO (Requisitos PDF)
+   5. TABLAS Y FORMULARIOS
    ============================================================== */
+
+/* --- TABLAS --- */
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
 th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
 th { background-color: var(--color-acento); color: white; }
 
-form { background: white; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px solid #ccc; box-sizing: border-box; }
+/* --- FORMULARIO ESTILO web SOMMERTAGE --- */
+form { 
+    background: white; 
+    padding: 40px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    border-radius: 12px; 
+    max-width: 600px;
+    margin: 40px auto;
+}
 
+form label {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    color: var(--color-acento);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
 
-/* Estilo para el botón de enviar formulario */
+input, textarea { 
+    width: 100%; 
+    padding: 15px; 
+    margin-bottom: 25px; 
+    border: 1px solid #eee; 
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-family: var(--fuente-cuerpo);
+    box-sizing: border-box; 
+    transition: all 0.3s ease;
+}
 
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    background-color: white;
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.1);
+}
+
+/* --- EL BOTÓN enviar --- */
 button[type="submit"] {
     background: var(--color-acento);
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 18px 30px;
     cursor: pointer;
     font-family: var(--fuente-titulos);
     width: 100%;
     font-size: 1.1rem;
+    letter-spacing: 2px; 
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
     margin-top: 10px;
-    transition: background-color 0.3s ease; /* Transición suave */
 }
 
-/* Efecto al pasar el ratón */
 button[type="submit"]:hover {
-    background-color: #1e5c3a !important; /* Verde más oscuro al contacto */
+    background-color: #1e5c3a !important;
 }
 
 /* ==============================================================
@@ -529,7 +571,7 @@ button[type="submit"]:hover {
 
 
 /* ==============================================================
-   10. BOTONES DE EXPLORACIÓN (Sección Sobre Mí)
+   10. BOTONES DE EXPLORACIÓN (html Sobre Mí)
    ============================================================== */
 
 .boton-simple {
@@ -560,21 +602,53 @@ button[type="submit"]:hover {
     pointer-events: none;
 }
 
+/* Centrado y espaciado de la fila de botones */
+div[style*="justify-content: center"] {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    padding: 20px 0;
+}
+
 /* ==============================================================
    11. Sección logística, separar menú desplegable del resto
    ============================================================== */
    /* Esto crea el hueco necesario debajo del menú */
 .contenido-logistica {
-    margin-top: 80px; /* Ajusta este número según el grosor de tu menú */
+    margin-top: 80px; /* Ajusta según el grosor de menú */
     padding: 20px;
 }
 
-/* Opcional: Dale estilo al título para que destaque */
+/* para q título destaque */
 h1 {
     margin-top: 20px;
     margin-bottom: 30px;
-    color: #2c3e50; /* Un azul oscuro profesional */
-    border-bottom: 2px solid #27ae60; /* Una línea verde que evoque naturaleza */
+    color: #2c3e50; /* azul oscuro */
+    border-bottom: 2px solid #27ae60; /* línea verde naturaleza */
     display: inline-block;
     padding-bottom: 10px;
+}
+
+
+/* ==============================================================
+   12. RRSS en contacto
+   ============================================================== */
+
+.rrss-contacto {
+    margin-top: 20px;
+}
+
+.enlace-social {
+    text-decoration: none;
+    color: var(--color-acento);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.enlace-social:hover {
+    opacity: 0.6;
+    text-decoration: underline;
 }
