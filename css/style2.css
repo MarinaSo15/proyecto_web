@@ -456,26 +456,27 @@ button[type="submit"]:hover {
 }
 
 /* ==============================================================
-   8. SECCIÓN SOBRE MÍ (Perfil)
+    8. SECCIÓN SOBRE MÍ (Perfil y Galería)
    ============================================================= */
+
 .foto-perfil-contenedor {
     text-align: center;
     margin: 40px auto 30px;
-    width: 90%;           /* Deja un poco de aire a los lados */
-    max-width: 500px;     /* Al ser vertical, mejor que no sea Gigante de ancho */
+    width: 90%;
+    max-width: 500px;
 }
 
 .foto-perfil {
-    width: 100%;          /* Se ajusta al ancho del contenedor */
-    height: auto;         /* ¡CLAVE! La altura se ajusta sola para que se vea ENTERA */
+    width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 12px;  /* Esquinas suaves */
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border: 1px solid #eee;
 }
 
-/*Galería de Autor */
+/* Galería de Autor (Las 6 fotos de arriba) */
 .galeria-perfil {
     display: flex;
     gap: 20px;
@@ -483,20 +484,20 @@ button[type="submit"]:hover {
     margin: 40px auto 50px;
     max-width: 1000px;
     padding: 0 20px;
-    flex-wrap: wrap; /* Por si en el móvil se quedan muy apretadas, que bajen */
+    flex-wrap: wrap;
 }
 
 .galeria-perfil figure {
     flex: 1;
-    min-width: 250px; /* Evita que se hagan diminutas */
+    min-width: 250px;
     margin: 0;
     text-align: center;
 }
 
 .galeria-perfil img {
     width: 100%;
-    height: 350px;     /* Altura fija para que todas las fotos queden alineadas */
-    object-fit: cover; /* Recorta el exceso para que todas tengan el mismo tamaño */
+    height: 350px;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     border: 1px solid #eee;
@@ -504,14 +505,14 @@ button[type="submit"]:hover {
 }
 
 .galeria-perfil img:hover {
-    transform: translateY(-5px); /* Efecto sutil de levante */
+    transform: translateY(-5px);
 }
 
-/* REGLA MAESTRA PARA QUE LA GALERÍA DE 6 FOTOS SEA CURSIVA */
+/* REGLA MAESTRA PARA QUE LA GALERÍA DE 6 FOTOS SEA CURSIVA Y NÍTIDA */
 .galeria-perfil figcaption {
     margin-top: 12px;
     font-size: 0.85rem;
-    color: #888;
+    color: #0a0a0a !important; /* Negro nítido para mejor lectura */
     font-family: var(--fuente-cuerpo) !important; 
     font-style: italic !important; 
     letter-spacing: 0.5px;
@@ -519,12 +520,15 @@ button[type="submit"]:hover {
     display: block;
 }
 
-/* unifica las fotos laterales (Bali, Congo, etc.) para que sean gemelas de las de arriba */
+/* MINIATURAS FLOTANTES (Bali, Congo, etc. dentro del texto) */
 .pie-foto-mini {
+    display: block;
     font-size: 0.85rem;
-    color: #888; /* O el negro #0a0a0a si prefieres que resalten más */
+    color: #0a0a0a !important; 
+    margin-top: 6px !important; /* Las pega a la foto como querías */
+    line-height: 1.3;
     font-family: var(--fuente-cuerpo);
-    font-style: italic;
+    font-style: italic !important;
     text-align: center;
 }
 
