@@ -445,15 +445,79 @@ button[type="submit"]:hover {
 /* ==============================================================
    7. MEDIA QUERIES (Requisito #9)
    ============================================================== */
+
+/* a) Sección M. query, tamaño de pantalla (móvil, tablet..)*/
+
 @media (max-width: 768px) {
     #hero h1 { font-size: 2.5rem; }
     .galeria-mini img { width: 45%; height: auto; }
 }
 
+
+/* b) Sección Media Query: impresora  */
+
 @media print {
-    nav, #hero, .cerrar, form { display: none; }
-    body { background: white; }
-}
+    /* Ocultamos lo que no sirve en papel */
+    nav, .hero-content, .footer-con-foto, video, button, .separador {
+        display: none !important;
+    }
+    
+    /* Ajustamos el cuerpo para que sea blanco y negro */
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    .container, .container-tablas {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Forzamos que las tablas se vean claras */
+    table {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    th {
+        background-color: #eee !important;
+        color: black !important;
+    }
+
+
+    /* c) Sección M. Query: Tema oscuro  */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a !important; /* Gris muy oscuro */
+        color: #f0f0f0 !important; /* Blanco roto para no deslumbrar */
+    }
+
+    .container, .contenido-perfil, .container-tablas {
+        background-color: #262626 !important;
+    }
+
+    h1, h2, .titulo-elegante {
+        color: #e0e0e0 !important;
+    }
+
+    /* Ajustamos las tablas para que no brillen demasiado */
+    table {
+        background-color: #333 !important;
+        color: white !important;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #3d3d3d !important;
+    }
+
+    /* El cuadro verde de logística lo ponemos un poco más oscuro */
+    div[style*="rgba(46, 139, 87, 0.05)"] {
+        background-color: rgba(46, 139, 87, 0.2) !important;
+    }
+
 
 /* ==============================================================
     8. SECCIÓN SOBRE MÍ (Perfil y Galería)
@@ -689,7 +753,7 @@ h1 {
 }
 
 /* ==============================================================
-   13. Proximamente
+   13. Sección Proximamente
    ============================================================== */
 
    .proximamente p {
@@ -699,3 +763,4 @@ h1 {
     line-height: 1.6;
     margin-bottom: 10px;
 }
+
