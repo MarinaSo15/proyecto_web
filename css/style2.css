@@ -1,5 +1,5 @@
 /* ==============================================================
-   1. VARIABLES Y CONFIGURACIÓN (Requisito #12)
+   01. VARIABLES Y CONFIGURACIÓN (, pdf 13 uso de variables CSS)
    ============================================================== */
 
    /* --- Almacén central --- */
@@ -40,10 +40,10 @@ h1 {
 
 
 /* ==============================================================
-   2. PORTADA (Efecto Ken Burns)
+   02. PORTADA (Efecto Ken Burns)
    ============================================================== */
 
-/* --- Modifica contenedor principal del Hero --- */
+/* --- Modifica contenedor principal del Hero, pdf 8 Responsive Design (Uso de Flexbox)--- */
 #hero {
     position: relative;
     height: 100vh;
@@ -88,7 +88,7 @@ h1 {
     z-index: 0; /* Por encima de la imagen pero por debajo del texto */
 }
 
-/* --- título ppal --- */
+/* --- título ppal, pdf 14: Importación y uso de fuentes externas font family--- */
 #hero h1 { 
     font-family: var(--fuente-titulos); 
     font-size: 4rem; 
@@ -114,8 +114,8 @@ h1 {
 }
 
 /* ==============================================================
-   3. NAVEGACIÓN (Menú con Desplegables),y como ejemplo
-   la web de viajes sommertage
+   03. NAVEGACIÓN (Menú con Desplegables),y como ejemplo
+   la web de viajes sommertage , Punto 1 pdf Menú de navegación
    ============================================================== */
 .nav-sommertage {
     position: sticky;
@@ -163,7 +163,7 @@ h1 {
 
 
 /* ==============================================================
-   4. SECCIONES Y GALERÍA 
+   04. SECCIONES Y GALERÍA 
    ============================================================== */
 
 /* --- Separador de países --- */
@@ -289,9 +289,10 @@ Línea vertical a la izquierda que conecta países de una misma región --- */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--color-texto);
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .proximamente {
@@ -333,26 +334,17 @@ Línea vertical a la izquierda que conecta países de una misma región --- */
     opacity: 1 !important;   /* sin transparencia */
 }
 
-/* --- Para q país se resalte dentro de la frase --- */
-.destacado-pais strong {
-    font-family: var(--fuente-titulos);
-    font-style: italic;
-    font-size: 1.4rem;
-    color: var(--color-texto);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* ==============================================================
-   5. TABLAS Y FORMULARIOS
+   05. TABLAS Y FORMULARIOS
    ============================================================== */
 
-/* --- Tablas --- */
+/* --- Tablas, Punto 3 pdf: Tablas de datos--- */
+
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
 th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
 th { background-color: var(--color-acento); color: white; }
 
-/* --- Formulario estilo web SOMMERTAGE --- */
+/* --- Formulario estilo web SOMMERTAGE, Punto 6 pdf: Formulario de contacto:--- */
 form { 
     background: white; 
     padding: 40px; 
@@ -407,11 +399,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #1e5c3a !important;
+    background-color: #1e5c3a;
 }
 
 /* ==============================================================
-   6. LIGHTBOX (Fondo Blanco)
+   06. LIGHTBOX (Fondo Blanco)
    ============================================================= */
 .lightbox {
     display: none;
@@ -450,85 +442,11 @@ button[type="submit"]:hover {
     border: 1px solid #eee; /* borde muy fino para que resalte */
 }
 
-/* ==============================================================
-   7. MEDIA QUERIES (Requisito pdf 9)
-   ============================================================== */
 
-/* a) Sección M. query, tamaño de pantalla (móvil, tablet..)*/
-
-@media (max-width: 768px) {
-    #hero h1 { font-size: 2.5rem; }
-    .galeria-mini img { width: 45%; height: auto; }
-}
-
-
-/* b) Sección Media Query: impresora  */
-
-@media print {
-    /* Ocultamos lo que no sirve en papel */
-    nav, .hero-content, .footer-con-foto, video, button, .separador {
-        display: none !important;
-    }
-    
-    /* Ajustamos el cuerpo para que sea blanco y negro */
-    body {
-        background-color: white !important;
-        color: black !important;
-        font-size: 12pt;
-    }
-
-    .container, .container-tablas {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Forzamos que las tablas se vean claras */
-    table {
-        border: 1px solid #000 !important;
-        box-shadow: none !important;
-    }
-    
-    th {
-        background-color: #eee !important;
-        color: black !important;
-    }
-
-
-    /* c) Sección M. Query: Tema oscuro  */
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1a1a1a !important; /* gris muy oscuro */
-        color: #f0f0f0 !important; /* blanco roto  */
-    }
-
-    .container, .contenido-perfil, .container-tablas {
-        background-color: #262626 !important;
-    }
-
-    h1, h2, .titulo-elegante {
-        color: #e0e0e0 !important;
-    }
-
-    /* Ajuste tablas pq brillan  */
-    table {
-        background-color: #333 !important;
-        color: white !important;
-    }
-
-    tbody tr:nth-child(even) {
-        background-color: #3d3d3d !important;
-    }
-
-    /* El cuadro verde de logística un poco más oscuro */
-    div[style*="rgba(46, 139, 87, 0.05)"] {
-        background-color: rgba(46, 139, 87, 0.2) !important;
-    }
 
 
 /* ==============================================================
-    8. SECCIÓN SOBRE MÍ (Perfil y Galería)
+    07. SECCIÓN SOBRE MÍ (Perfil y Galería)
    ============================================================= */
 
 .foto-perfil-contenedor {
@@ -605,7 +523,7 @@ button[type="submit"]:hover {
 }
 
 /* ==============================================================
-   9. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
+   08. FOTOS LATERALES EN EL TEXTO (Y EFECTO ZOOM)
    ============================================================= */
 
 .foto-flotante-izq, 
@@ -677,9 +595,9 @@ button[type="submit"]:hover {
 }
 
 
-/* ==============================================================
-   10. BOTONES DE EXPLORACIÓN (html Sobre Mí)
-   ============================================================== */
+/* ======================================================================================
+   09. BOTONES DE EXPLORACIÓN (html Sobre Mí , Punto 1 pdf (Menú y Navegación Interna))
+   ====================================================================================== */
 
 .boton-simple {
     display: inline-block;
@@ -717,7 +635,7 @@ div[style*="justify-content: center"] {
 }
 
 /* ===================================================================
-   11. SECCIÓN HTML LOGÍSTICA, SEPARAR MENÚ DESPLEGABLE DEL RESTO 
+   10. SECCIÓN HTML LOGÍSTICA, SEPARAR MENÚ DESPLEGABLE DEL RESTO 
    ===================================================================*/
 
    /* --- Esto crea el hueco necesario debajo del menú --- */
@@ -737,9 +655,9 @@ h1 {
 }
 
 
-/* ==============================
-   12. RRSS DE HTML CONTACTO
-   ============================== */
+/* ===============================================================
+   11. RRSS DE HTML CONTACTO, Punto 6 pdf (Formulario y contacto)
+   =============================================================== */
 
 .rrss-contacto {
     margin-top: 20px;
@@ -762,7 +680,7 @@ h1 {
 }
 
 /* =================================
-   13. SECCIÓN PROXIMAMENTE
+   12. SECCIÓN PROXIMAMENTE
    ================================ */
 
    .proximamente p {
@@ -773,3 +691,78 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* ==============================================================
+   13. MEDIA QUERIES (Requisito pdf 9)
+   ============================================================== */
+
+/* a) Sección M. query, tamaño de pantalla (móvil, tablet..)*/
+
+@media (max-width: 768px) {
+    #hero h1 { font-size: 2.5rem; }
+    .galeria-mini img { width: 45%; height: auto; }
+}
+
+/* b) Sección Media Query: impresora  */
+
+@media print {
+    /* Ocultamos lo que no sirve en papel */
+    nav, .hero-content, .footer-con-foto, video, button, .separador {
+        display: none !important;
+    }
+    
+    /* Ajustamos el cuerpo para que sea blanco y negro */
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    .container, .container-tablas {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Forzamos que las tablas se vean claras */
+    table {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    th {
+        background-color: #eee !important;
+        color: black !important;
+    }
+} 
+
+    /* c) Sección M. Query: Tema oscuro  */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a !important; /* gris muy oscuro */
+        color: #f0f0f0 !important; /* blanco roto  */
+    }
+
+    .container, .contenido-perfil, .container-tablas {
+        background-color: #262626 !important;
+    }
+
+    h1, h2, .titulo-elegante {
+        color: #e0e0e0 !important;
+    }
+
+    /* Ajuste tablas pq brillan  */
+    table {
+        background-color: #333 !important;
+        color: white !important;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #3d3d3d !important;
+    }
+
+    /* El cuadro verde de logística un poco más oscuro */
+    div[style*="rgba(46, 139, 87, 0.05)"] {
+        background-color: rgba(46, 139, 87, 0.2) !important;
+    }
+}
