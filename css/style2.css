@@ -1,6 +1,8 @@
 /* ==============================================================
    1. VARIABLES Y CONFIGURACIÓN (Requisito #12)
    ============================================================== */
+
+   /* --- Almacén central --- */
 :root {
     --color-texto: #333333;
     --color-acento: #2E8B57; 
@@ -10,12 +12,12 @@
     --fuente-cuerpo: 'Inter', sans-serif;
 }
 
-/* Aplicar margen a ID 
-   para intentar q menú no lo tape  */
 
+/* ---Aplicar margen a ID para intentar q menú no lo tape --- */
 [id] {
     scroll-margin-top: 160px; /* Aumento de 120px a 160px */
 }
+
 
 body {
     margin: 0;
@@ -24,7 +26,7 @@ body {
     color: var(--color-texto);
 }
 
-/* REGLA GENERAL PARA EL CONTENIDO*/
+/* --- Regla general para contenido ---- */
 main {
     margin-top: 140px; /* Empuja el contenido hacia abajo en TODAS las páginas */
     padding: 20px;
@@ -36,10 +38,12 @@ h1 {
     padding-top: 10px;
 }
 
+
 /* ==============================================================
    2. PORTADA (Efecto Ken Burns)
    ============================================================== */
-/* Modifica el contenedor principal del Hero */
+
+/* --- Modifica contenedor principal del Hero --- */
 #hero {
     position: relative;
     height: 100vh;
@@ -52,7 +56,8 @@ h1 {
     text-align: left;
 }
 
-/* La capa que contiene las imágenes, zoom y rotación */
+
+/* --- La capa que contiene las imágenes, zoom y rotación --- */
 .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -69,19 +74,21 @@ h1 {
     opacity: 1; /* Solo la imagen con esta clase se ve */
 }
 
-/* El filtro oscuro para que el texto siempre sea legible */
+
+/* --- Filtro oscuro para que el texto siempre sea legible --- */
 #hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
+
     /* Añadimos una textura de puntos sobre el color oscuro */
     background: radial-gradient(circle, rgba(0,0,0,0.2) 1px, transparent 1px), 
                 rgba(0, 0, 0, 0.4); 
-    background-size: 3px 3px; /* Tamaño de los puntos */
+    background-size: 3px 3px; /* Tamaño de puntos */
     z-index: 0; /* Por encima de la imagen pero por debajo del texto */
 }
 
-/* título ppal*/
+/* --- título ppal --- */
 #hero h1 { 
     font-family: var(--fuente-titulos); 
     font-size: 4rem; 
@@ -107,7 +114,8 @@ h1 {
 }
 
 /* ==============================================================
-   3. NAVEGACIÓN (Menú con Desplegables)
+   3. NAVEGACIÓN (Menú con Desplegables),y como ejemplo
+   la web de viajes sommertage
    ============================================================== */
 .nav-sommertage {
     position: sticky;
@@ -129,7 +137,7 @@ h1 {
     font-size: 1.1rem;
 }
 
-/* Los desplegables */
+/* --- Los desplegables --- */
 .dropdown { position: relative; display: inline-block; }
 
 .dropdown-content {
@@ -153,21 +161,22 @@ h1 {
 .dropdown:hover .dropdown-content { display: block; }
 .separador { color: #ccc; margin: 0 5px; }
 
+
 /* ==============================================================
    4. SECCIONES Y GALERÍA 
    ============================================================== */
 
-/* --- SEPARADOR DE PAÍSES--- */
+/* --- Separador de países --- */
 hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-    margin: 80px 0; /* Esto da un respiro enorme entre países */
+    margin: 80px 0; /* da espacio enorme entre países */
 }
 
 .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-/* Espacio al final de los bloques de contenido */
+/* --- Espacio al final de los bloques de contenido --- */
 article, .container-tablas, .contenido-perfil {
     margin-bottom: 100px !important; 
 }
@@ -188,23 +197,23 @@ summary {
     font-family: var(--fuente-titulos);
     font-size: 1.1rem; 
     list-style: none;
-    padding: 8px 15px; /* Le damos un poco de "área" para pinchar mejor */
-    transition: all 0.3s ease; /* Hace que el movimiento sea suave, no brusco */
-    display: inline-block; /* Para que el efecto de fondo quede bien recogido */
+    padding: 8px 15px; /* Área para pinchar mejor */
+    transition: all 0.3s ease; /* Movimiento  suave, no brusco */
+    display: inline-block; /* Para q efecto de fondo quede bien recogido */
     border-radius: 4px;
 }
 
-/* EL EFECTO AL PASAR EL RATÓN */ 
+/* --- Efecto al pasar el ratón --- */ 
 summary:hover::before {
     content: "→ "; /* Aparece una flechita de guía */
     font-weight: bold;
     background-color: rgba(46, 139, 87, 0.08); /* Un fondo verde muy clarito */
-    padding-left: 25px; /* Se desplaza un poco a la derecha (efecto invitación) */
+    padding-left: 25px; /* Se desplaza un poco a la derecha */
     color: #1a4a2e; /* El texto se oscurece un poco */
 }
 
 
-/* Requisito #8: Galería con Flexbox */
+/* --- Requisito pdf 8: Galería con Flexbox --- */
 .galeria-mini {
     display: flex;
     flex-wrap: wrap;
@@ -214,7 +223,7 @@ summary:hover::before {
 }
 
 .galeria-mini img {
-    width: 150px; /* Tamaño que me gusta */
+    width: 150px; /* Tamaño q me gusta */
     height: 100px;
     object-fit: cover;
     cursor: pointer;
@@ -223,13 +232,13 @@ summary:hover::before {
 
 .galeria-mini img:hover { transform: scale(1.05); opacity: 0.9; }
 
-/* Estilo para las sub-regiones
-Línea vertical a la izquierda que conecta países de una misma región */
+/* --- Estilo para las sub-regiones
+Línea vertical a la izquierda que conecta países de una misma región --- */
 
 .lista-continente li {
     position: relative;
     padding-left: 30px;
-    border-left: 1px solid var(--color-acento); /* La línea verde de tu marca */
+    border-left: 1px solid var(--color-acento); /* La línea verde */
     margin-bottom: 80px;
 }
 
@@ -244,7 +253,7 @@ Línea vertical a la izquierda que conecta países de una misma región */
     margin-top: 60px; /* Un poco más de espacio arriba para separar regiones */
     margin-bottom: 10px;
     border-bottom: 2px solid var(--color-acento); 
-    display: block; /* Cambiamos a block para que ocupe su propia línea y respete la izquierda */
+    display: block; /*  a block para q ocupe su propia línea y respete la izquierda */
     padding-bottom: 10px;
     text-align: left; /* Aseguramos la alineación a la izquierda */
     width: fit-content; /* La línea del borde solo llegará hasta donde termine el texto */
@@ -256,8 +265,7 @@ Línea vertical a la izquierda que conecta países de una misma región */
     margin-bottom: 20px;
 }
 
-/*  REGLA PARA EL PAÍS, subordinado de región */
-
+/* --- Regla para el país, subordinado de región */
 .destacado-pais {
     font-family: var(--fuente-cuerpo); /* Usamos la letra limpia 'Inter' */
     font-size: 1.1rem; /* Un poco más pequeña */
@@ -266,18 +274,18 @@ Línea vertical a la izquierda que conecta países de una misma región */
     letter-spacing: 0.5px;
     text-transform: none;
 
-    /* --- AÑADO NUEVO PARA SEPARAR PAÍSES --- */
+    /* --- Añado nuevo para separar países --- */
     margin-top: 80px;           /* Empuja el país hacia abajo para que no esté pegado a la intro */
     padding-top: 30px;          /* Espacio entre la línea y el nombre del país */
-    border-top: 1px solid #eee; /* Una línea sutil que separa la región del país */
+    border-top: 1px solid #eee; /* línea sutil que separa la región del país */
     display: block;             /* Asegura que respete los márgenes */
 
-    /* --- LOGÍSTICA DE NAVEGACIÓN --- */
+    /* --- Logística de navegación --- */
     scroll-margin-top: 100px; /* Evita que el menú tape el título al saltar */
 }
 
 
-/* para q países destaquen dentro de la frase: */
+/* --- Para q países destaquen dentro de la frase --- */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -294,38 +302,38 @@ Línea vertical a la izquierda que conecta países de una misma región */
     color: #888;
 }
 
-/* La caja q contiene el todo */
+/* --- La caja q contiene el todo --- */
 .foto-pais-portada {
     width: 100%;
     max-width: 800px; /* Más estrecha  */
-    height: auto;     /* Altura automática */
+    height: auto;     /* altura automática */
     margin: 40px auto; 
     overflow: hidden; 
-    border-radius: 12px; /* Esquinas  redondeadas */
+    border-radius: 12px; /* esquinas  redondeadas */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .foto-pais-portada img {
     width: 100%;
-    height: auto;     /* Que no se corte la foto */
+    height: auto;     /* q no se corte la foto */
     display: block;
 }
 
-/* Pies de foto de las imágenes grandes de países */
+/* --- pies de foto de las imágenes grandes de países --- */
 .pie-foto, figcaption {
     text-align: center;
     font-family: var(--fuente-cuerpo); /* cursiva más legible */
     font-style: italic !important;    /* siempre cursiva */
     font-size: 0.95rem;
-    color: #0a0a0a !important; /* Negro para q se lea */
+    color: #0a0a0a !important; /* negro para q se lea */
     margin-top: 15px;
     padding: 0 20px;
     line-height: 1.4;
     display: block;
-    opacity: 1 !important;   /* Sin transparencia */
+    opacity: 1 !important;   /* sin transparencia */
 }
 
-/* Para q país se resalte dentro de la frase */
+/* --- Para q país se resalte dentro de la frase --- */
 .destacado-pais strong {
     font-family: var(--fuente-titulos);
     font-style: italic;
@@ -339,12 +347,12 @@ Línea vertical a la izquierda que conecta países de una misma región */
    5. TABLAS Y FORMULARIOS
    ============================================================== */
 
-/* --- TABLAS --- */
+/* --- Tablas --- */
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
 th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
 th { background-color: var(--color-acento); color: white; }
 
-/* --- FORMULARIO ESTILO web SOMMERTAGE --- */
+/* --- Formulario estilo web SOMMERTAGE --- */
 form { 
     background: white; 
     padding: 40px; 
@@ -382,7 +390,7 @@ input:focus, textarea:focus {
     box-shadow: 0 0 8px rgba(46, 139, 87, 0.1);
 }
 
-/* --- EL BOTÓN enviar --- */
+/* --- El botón enviar --- */
 button[type="submit"] {
     background: var(--color-acento);
     color: white;
@@ -403,18 +411,18 @@ button[type="submit"]:hover {
 }
 
 /* ==============================================================
-   6. LIGHTBOX (Fondo Blanco Elegante)
+   6. LIGHTBOX (Fondo Blanco)
    ============================================================= */
 .lightbox {
     display: none;
     position: fixed; 
-    z-index: 9999; /* Máxima prioridad: nada pasará por encima */
+    z-index: 9999; /* máxima prioridad: nada por encima */
     top: 0; 
     left: 0; 
     width: 100%; 
     height: 100%;
     
-    /* Fondo sólido: elimina las transparencias para evitar ver fotos detrás */
+    /* --- Fondo sólido: elimina las transparencias para evitar ver fotos detrás --- */
     background-color: var(--fondo-nude); 
     
     justify-content: center; 
@@ -426,24 +434,24 @@ button[type="submit"]:hover {
 .cerrar { position: absolute; top: 20px; right: 30px; font-size: 40px; cursor: pointer; color: #333; }
 
 #caption {
-    margin-top: 45px; /* Aquí le damos la distancia generosa que buscabas */
+    margin-top: 45px; /* distancia generosa  */
     font-family: var(--fuente-titulos);
     font-style: italic;
     font-size: 1.2rem;
     color: var(--color-texto);
     text-align: center;
-    width: 100%; /* Asegura que el centrado sea perfecto */
+    width: 100%; /* centrado sea perfecto */
 }
 
 .contenido-lightbox {
     max-width: 85%;
-    max-height: 70%; /* Bajamos un poco el alto máximo para dejar espacio al texto */
+    max-height: 70%; /* bajamos un poco el alto máximo para dejar espacio al texto */
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    border: 1px solid #eee; /* Un borde muy fino para que resalte */
+    border: 1px solid #eee; /* borde muy fino para que resalte */
 }
 
 /* ==============================================================
-   7. MEDIA QUERIES (Requisito #9)
+   7. MEDIA QUERIES (Requisito pdf 9)
    ============================================================== */
 
 /* a) Sección M. query, tamaño de pantalla (móvil, tablet..)*/
@@ -491,8 +499,8 @@ button[type="submit"]:hover {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1a1a1a !important; /* Gris muy oscuro */
-        color: #f0f0f0 !important; /* Blanco roto para no deslumbrar */
+        background-color: #1a1a1a !important; /* gris muy oscuro */
+        color: #f0f0f0 !important; /* blanco roto  */
     }
 
     .container, .contenido-perfil, .container-tablas {
@@ -503,7 +511,7 @@ button[type="submit"]:hover {
         color: #e0e0e0 !important;
     }
 
-    /* Ajustamos las tablas para que no brillen demasiado */
+    /* Ajuste tablas pq brillan  */
     table {
         background-color: #333 !important;
         color: white !important;
@@ -513,7 +521,7 @@ button[type="submit"]:hover {
         background-color: #3d3d3d !important;
     }
 
-    /* El cuadro verde de logística lo ponemos un poco más oscuro */
+    /* El cuadro verde de logística un poco más oscuro */
     div[style*="rgba(46, 139, 87, 0.05)"] {
         background-color: rgba(46, 139, 87, 0.2) !important;
     }
@@ -540,7 +548,7 @@ button[type="submit"]:hover {
     border: 1px solid #eee;
 }
 
-/* Galería de Autor (Las 6 fotos de arriba) */
+/* --- Galería de Autor (Las 6 fotos de arriba) --- */
 .galeria-perfil {
     display: flex;
     gap: 20px;
@@ -572,11 +580,11 @@ button[type="submit"]:hover {
     transform: translateY(-5px);
 }
 
-/* REGLA MAESTRA PARA QUE LA GALERÍA DE 6 FOTOS SEA CURSIVA Y NÍTIDA */
+/* --- Regla para q la galería de 6 sea cursiva y mas nítida ---*/ 
 .galeria-perfil figcaption {
     margin-top: 12px;
     font-size: 0.85rem;
-    color: #0a0a0a !important; /* Negro nítido para mejor lectura */
+    color: #0a0a0a !important; /* negro nítido para mejor lectura */
     font-family: var(--fuente-cuerpo) !important; 
     font-style: italic !important; 
     letter-spacing: 0.5px;
@@ -584,12 +592,12 @@ button[type="submit"]:hover {
     display: block;
 }
 
-/* MINIATURAS FLOTANTES (Bali, Congo, etc. dentro del texto) */
+/* --- Miniaturas flotantes (Bali, Congo, etc. dentro del texto) --- */
 .pie-foto-mini {
     display: block;
     font-size: 0.85rem;
     color: #0a0a0a !important; 
-    margin-top: 6px !important; /* Las pega a la foto como querías */
+    margin-top: 6px !important; /* Las pega a la foto, abajo */
     line-height: 1.3;
     font-family: var(--fuente-cuerpo);
     font-style: italic !important;
@@ -602,8 +610,8 @@ button[type="submit"]:hover {
 
 .foto-flotante-izq, 
 .foto-flotante-der {
-    width: 220px;          /* El ancho que tenías */
-    display: table;        /* CLAVE: Obliga al pie a quedarse pegado al ancho de la foto */
+    width: 220px;          /* El ancho  */
+    display: table;        /* Obliga al pie a quedarse pegado al ancho de la foto */
     position: relative;
 }
 
@@ -629,7 +637,7 @@ button[type="submit"]:hover {
     cursor: zoom-in;
 }
 
-/* Efecto zoom */
+/* --- Efecto zoom --- */
 .foto-flotante-izq img:hover, 
 .foto-flotante-der img:hover {
     transform: scale(1.8);
@@ -637,19 +645,19 @@ button[type="submit"]:hover {
     z-index: 10;
 }
 
-/* EL PIE DE FOTO MINI (Para que quede debajo y pegado) */
+/* --- El pie de foto mini (Para que quede debajo y pegado) --- */
 .pie-foto-mini {
     display: block;
     font-size: 0.85rem;
     color: #0a0a0a !important; 
-    margin-top: 6px !important; /* Aquí controlas la cercanía a la foto */
+    margin-top: 6px !important; /* control la cercanía a la foto */
     line-height: 1.3;
     font-family: var(--fuente-cuerpo);
     font-style: italic !important;
     text-align: center;
 }
 
-/* Ajuste de pie de foto de las imágenes grandes */
+/* --- Ajuste de pie de foto de las imágenes grandes --- */
 .pie-foto {
     color: #050505 !important;
     font-family: var(--fuente-cuerpo);
@@ -661,7 +669,7 @@ button[type="submit"]:hover {
     display: block;
 }
 
-/* para que el texto no se monte en las fotos */
+/* --- Para que el texto no se monte en las fotos --- */
 .contenido-perfil::after {
     content: "";
     display: table;
@@ -692,7 +700,7 @@ button[type="submit"]:hover {
     color: white !important;
 }
 
-/* Estilo para países que aún no tienen contenido */
+/* --- Estilo para países que aún no tienen contenido --- */
 .boton-simple.deshabilitado {
     border: 1px solid #ddd;
     color: #aaa;
@@ -701,23 +709,24 @@ button[type="submit"]:hover {
     pointer-events: none;
 }
 
-/* Centrado y espaciado de la fila de botones */
+/* --- Centrado y espaciado de la fila de botones --- */
 div[style*="justify-content: center"] {
     margin-top: 50px !important;
     margin-bottom: 50px !important;
     padding: 20px 0;
 }
 
-/* ==============================================================
-   11. Sección logística, separar menú desplegable del resto
-   ============================================================== */
-   /* Esto crea el hueco necesario debajo del menú */
+/* ===================================================================
+   11. SECCIÓN HTML LOGÍSTICA, SEPARAR MENÚ DESPLEGABLE DEL RESTO 
+   ===================================================================*/
+
+   /* --- Esto crea el hueco necesario debajo del menú --- */
 .contenido-logistica {
     margin-top: 80px; /* Ajusta según el grosor de menú */
     padding: 20px;
 }
 
-/* para q título destaque */
+/* --- Para q título destaque ---*/
 h1 {
     margin-top: 20px;
     margin-bottom: 30px;
@@ -728,9 +737,9 @@ h1 {
 }
 
 
-/* ==============================================================
-   12. RRSS en contacto
-   ============================================================== */
+/* ==============================
+   12. RRSS DE HTML CONTACTO
+   ============================== */
 
 .rrss-contacto {
     margin-top: 20px;
@@ -752,9 +761,9 @@ h1 {
     text-decoration: underline;
 }
 
-/* ==============================================================
-   13. Sección Proximamente
-   ============================================================== */
+/* =================================
+   13. SECCIÓN PROXIMAMENTE
+   ================================ */
 
    .proximamente p {
     font-family: var(--fuente-cuerpo);

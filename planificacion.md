@@ -2,7 +2,7 @@
 
 ## 1. Estructura del menu
 hola
-* [ ] Inicio (Fotos grande de portada + quien soy). Fotos que pasen. Quizás mapa mundi q lleve a los destinos
+* [ ] Inicio (Fotos grande de portada + quien soy). Fotos que pasen. Quizás si tiempo, mapa mundi q lleve a los destinos
 * [ ] Destinos (Lista de paises visitados)
 ASIA🌏
 Myanmar:
@@ -70,3 +70,14 @@ Parque Nacional Galápagos
 * [ ] Color principal: Verde Selva (#2E8B57)
 * [ ] Color secundario: Marron Tierra (#8B4513)
 * [ ] Idea: Usar la frase "Lo que no te mata te hace mas fuerte, o engorda" en pie de pagina.
+
+## 4. Páginas
+* [ ] index, inicio, presentación, vídeos
+* [ ] sobre mi
+* [ ] países por separado, para q el código no sea lío
+* [ ] si diera tiempo, fotos de todos los países, si no, un próximamente
+* [ ] Tablas y listas para la logística
+* [ ] Pág sobre contacto y conectar con las RRSS
+* [ ] Si diera tiempo, pag en ingles: index_EN 
+
+
