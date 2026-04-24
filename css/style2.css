@@ -75,7 +75,7 @@ h1 {
 }
 
 
-/* --- Filtro oscuro para que el texto siempre sea legible --- */
+/* --- Filtro oscuro para q texto siempre legible --- */
 #hero::before {
     content: "";
     position: absolute;
@@ -95,7 +95,7 @@ h1 {
     margin: 0; 
     position: relative; 
     z-index: 2; 
-    color: white !important; /* <--- PÓNLO AQUÍ EXACTAMENTE */
+    color: white !important; /* <--- ponerlo AQUÍ EXACTAMENTE */
 }
 
 .subtitle { 
