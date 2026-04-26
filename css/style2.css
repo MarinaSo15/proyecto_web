@@ -695,45 +695,79 @@ h1 {
    13. MEDIA QUERIES (Requisito pdf 9)
    ============================================================== */
 
-/* a) Sección M. query, tamaño de pantalla (móvil, tablet..)*/
-
+/* a) Ajuste para Móviles y Tablets */ 
 @media (max-width: 768px) {
-    #hero h1 { font-size: 2.5rem; }
-    .galeria-mini img { width: 45%; height: auto; }
+
+    /* --- 1. MENÚ: Permitir que los desplegables se vean --- */
+    .nav-sommertage {
+        position: relative !important;
+        z-index: 9999 !important; /* Super prioridad para que el menú esté siempre ARRIBA */
+    }
+
+    .nav-wrapper {
+        display: flex !important;
+        flex-wrap: wrap !important; 
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    .dropdown-content {
+        position: relative !important; /* En móvil, es mejor que el desplegable empuje el contenido hacia abajo */
+        width: 100% !important;
+        box-shadow: none !important;
+        background-color: rgba(0,0,0,0.03) !important;
+    }
+
+    /* --- 2. PORTADA: Que vuelvan a rotar las fotos --- */
+    #hero {
+        height: 50vh !important; 
+        min-height: 300px !important;
+        background-color: #000 !important;
+        z-index: 1 !important; /* Prioridad baja para no tapar el menú */
+    }
+
+    .hero-bg {
+        animation: none !important; 
+        transform: scale(1) !important; 
+        background-size: cover !important; 
+        background-position: center center !important;
+        /* Quitamos el 'opacity: 1' fijo para que el JS pueda cambiarlas */
+        transition: opacity 1.5s ease-in-out !important;
+    }
+
+    /* Solo se ve la que el JavaScript decida */
+    .hero-bg.active {
+        opacity: 1 !important;
+        z-index: 2 !important;
+    }
+
+    /* --- 3. TÍTULOS --- */
+    #hero h1 { 
+        font-size: 1.6rem !important; 
+        z-index: 5 !important;
+    }
 }
 
-/* b) Sección Media Query: impresora  */
 
+/* b) Sección Media Query: Impresora */
 @media print {
-    /* Ocultamos lo que no sirve en papel */
     nav, .hero-content, .footer-con-foto, video, button, .separador {
         display: none !important;
     }
-    
-    /* Ajustamos el cuerpo para que sea blanco y negro */
     body {
         background-color: white !important;
         color: black !important;
-        font-size: 12pt;
     }
+}
 
-    .container, .container-tablas {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
+/* c) Sección M. Query: Tema oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a !important;
+        color: #f0f0f0 !important;
     }
-
-    /* Forzamos que las tablas se vean claras */
-    table {
-        border: 1px solid #000 !important;
-        box-shadow: none !important;
-    }
-    
-    th {
-        background-color: #eee !important;
-        color: black !important;
-    }
-} 
+    /* ... (aquí sigue el resto de tu código del tema oscuro) ... */
+}
 
     /* c) Sección M. Query: Tema oscuro  */
 
