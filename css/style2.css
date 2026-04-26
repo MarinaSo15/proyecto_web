@@ -698,32 +698,48 @@ h1 {
 /* a) Ajuste para Móviles y Tablets */ 
 @media (max-width: 768px) {
 
-    /* --- 1. MENÚ: Permitir que los desplegables se vean --- */
+    /* 1. NAVEGACIÓN:  desplegables (África, Asia, etc.) --- */
     .nav-sommertage {
         position: relative !important;
-        z-index: 9999 !important; /* Super prioridad para que el menú esté siempre ARRIBA */
+        z-index: 1000 !important;
+        padding: 10px 0 !important;
     }
 
     .nav-wrapper {
         display: flex !important;
         flex-wrap: wrap !important; 
         justify-content: center !important;
-        gap: 10px !important;
+        gap: 15px 10px !important; /*  espacio vertical entre filas de botones */
+    }
+
+    /* botón de continentes, un bloque  */
+    .dropdown {
+        position: static !important; /* submenú ocupe todo el ancho */
     }
 
     .dropdown-content {
-        position: relative !important; /* En móvil, es mejor que el desplegable empuje el contenido hacia abajo */
-        width: 100% !important;
-        box-shadow: none !important;
-        background-color: rgba(0,0,0,0.03) !important;
+        display: none; /* oculto hasta el hover de ratón */
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important; /* Ocupa  el ancho del móvil */
+        background-color: #fdfaf7 !important; /* color de fondo nude */
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1) !important;
+        z-index: 2000 !important;
+        text-align: center !important;
     }
 
-    /* --- 2. PORTADA: Que vuelvan a rotar las fotos --- */
+    /* Al pasar el dedo/ratón, el menú aparece centrado */
+    .dropdown:hover .dropdown-content {
+        display: block !important;
+    }
+
+    /* --- 2. PORTADA (CARRUSEL): por fin aparece */
     #hero {
         height: 50vh !important; 
         min-height: 300px !important;
         background-color: #000 !important;
-        z-index: 1 !important; /* Prioridad baja para no tapar el menú */
+        z-index: 1 !important; /* Se queda debajo del menú */
     }
 
     .hero-bg {
@@ -731,20 +747,15 @@ h1 {
         transform: scale(1) !important; 
         background-size: cover !important; 
         background-position: center center !important;
-        /* Quitamos el 'opacity: 1' fijo para que el JS pueda cambiarlas */
         transition: opacity 1.5s ease-in-out !important;
     }
 
-    /* Solo se ve la que el JavaScript decida */
     .hero-bg.active {
         opacity: 1 !important;
-        z-index: 2 !important;
     }
 
-    /* --- 3. TÍTULOS --- */
     #hero h1 { 
         font-size: 1.6rem !important; 
-        z-index: 5 !important;
     }
 }
 
@@ -795,8 +806,16 @@ h1 {
         background-color: #3d3d3d !important;
     }
 
-    /* El cuadro verde de logística un poco más oscuro */
+    /* El cuadro verde más oscuro */
     div[style*="rgba(46, 139, 87, 0.05)"] {
         background-color: rgba(46, 139, 87, 0.2) !important;
     }
+}
+
+
+/* ==============================================================
+   14. FINAL DEL ARCHIVO: Arreglo de emergencia para Logística
+   ============================================================== */
+.foto-flotante-izq, .foto-flotante-der, figure {
+    overflow: visible !important;
 }
