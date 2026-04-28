@@ -734,7 +734,7 @@ h1 {
         display: block !important;
     }
 
-    /* --- 2. PORTADA (CARRUSEL): por fin aparece */
+    /* --- 2. PORTADA (CARRUSEL) */
     #hero {
         height: 50vh !important; 
         min-height: 300px !important;
